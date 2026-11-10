@@ -6,6 +6,7 @@ import { INPUT_COUNT, readSensors, sensorInputs } from "@/game/car/sensors";
 import type { Track } from "@/game/track/track";
 import { createBrain, think, type Brain } from "./brain";
 import { nextGeneration, score } from "./evolution";
+import type { SavedTraining } from "./saveBrain";
 import { measureGeneration, type GenerationStats } from "./stats";
 
 // Types
@@ -31,7 +32,7 @@ export type Trainer = {
 
 // Settings
 
-const LAYERS = [INPUT_COUNT, 8, 6, 2]; // 8 sensors in, 2 hidden layers, gas + steer out
+export const LAYERS = [INPUT_COUNT, 8, 6, 2]; // 8 sensors in, 2 hidden layers, gas + steer out
 export const POPULATION = 100; // cars per generation
 const THINK_EVERY = 4; // the brains decide every 4th physics step (30 times a second)
 const STUCK_TIME = 5; // seconds without a new checkpoint = out
@@ -96,6 +97,20 @@ export function leader(trainer: Trainer): Car {
     if (score(racer.car) > score(best)) best = racer.car;
   }
   return best;
+}
+// continues training from a saved brain: 1 exact copy, the other 99 bred from it
+export function restoreTrainer(trainer: Trainer, saved: SavedTraining, track: Track) {
+  const brain = { layers: [...saved.layers], weights: [...saved.weights] };
+  const brains = nextGeneration([{ brain, score: 1 }], POPULATION);
+  trainer.racers = brains.map((child) => createRacer(child, track));
+  trainer.generation = saved.generation + 1;
+  trainer.time = 0;
+  trainer.steps = 0;
+  trainer.bestScore = 0;
+  trainer.bestBrain = brain;
+  trainer.bestLap = saved.bestLap;
+  trainer.bestLapGeneration = saved.bestLapGeneration;
+  trainer.history = [...saved.history];
 }
 
 // Helpers
