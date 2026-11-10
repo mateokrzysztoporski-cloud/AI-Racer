@@ -10,7 +10,12 @@ A race game in the browser where we will train our own AI agent and neural netwo
 │       ├── app/
 │       │   └── page.tsx         # home page, shows the game full window
 │       └── game/
-│           ├── Game.tsx         # game screen: canvas, draws everything
+│           ├── Game.tsx         # game screen: game loop, draws everything
+│           ├── geometry.ts      # line crossing math (crashes, checkpoints)
+│           ├── car/
+│           │   ├── car.ts       # car data, physics, crashes, checkpoints
+│           │   ├── controls.ts  # keyboard: arrows / WASD, Space = restart
+│           │   └── drawCar.ts   # draws a car in its color
 │           ├── track/
 │           │   ├── track.ts     # track structure: shape, walls, checkpoints, start position
 │           │   └── drawTrack.ts # draws the track and start box
@@ -32,6 +37,15 @@ pnpm dev
 
 Then open http://localhost:3000
 
+## Controls
+
+| Key | Action |
+|---|---|
+| ↑ / W | gas |
+| ↓ / S | brake, then reverse |
+| ← → / A D | steer |
+| Space | new car in the start box |
+
 ## Checks before committing
 
 ```bash
@@ -43,5 +57,6 @@ pnpm build
 
 - [x] Race track with walls and checkpoints
 - [x] Start box and lap timer
-- [ ] Car you can drive with the keyboard
+- [x] Car you can drive with the keyboard
+- [ ] Car sensors (distance to the walls)
 - [ ] AI that learns to drive
