@@ -20,7 +20,8 @@ A race game in the browser where we will train our own AI agent and neural netwo
 │           │   └── drawSensors.ts # draws the sensor lines
 │           ├── track/
 │           │   ├── track.ts     # track structure: shape, walls, checkpoints, start position
-│           │   └── drawTrack.ts # draws the track and start box
+│           │   ├── drawTrack.ts # draws the track and start box
+│           │   └── wallGrid.ts  # walls sorted into squares, so cars only check walls nearby
 │           └── race/
 │               ├── lapTimer.ts  # lap timer logic: current, last and best lap
 │               └── drawHud.ts   # draws the lap timer box and the AI inputs panel

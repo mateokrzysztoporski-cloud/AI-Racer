@@ -3,6 +3,7 @@
 import { linesCross } from "@/game/geometry";
 import { createLapTimer, crossStartLine, type LapTimer } from "@/game/race/lapTimer";
 import type { Point, Segment, StartPosition, Track } from "@/game/track/track";
+import { wallsNear } from "@/game/track/wallGrid";
 import type { Controls } from "./controls";
 
 // Types
@@ -77,7 +78,7 @@ export function updateCar(car: Car, controls: Controls, track: Track, dt: number
   car.position.y += Math.sin(car.angle) * car.speed * dt;
 
   // crash: stop for good
-  if (hitsWall(car, track.walls)) {
+  if (hitsWall(car, wallsNear(track.grid, car.position, CAR_LENGTH))) {
     car.crashed = true;
     car.speed = 0;
     return;
