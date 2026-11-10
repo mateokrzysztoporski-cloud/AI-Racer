@@ -6,14 +6,18 @@ A race game in the browser where we will train our own AI agent and neural netwo
 ```
 .
 ├── web/
-│   └── ai-racer/            # the game (Next.js 16)
+│   └── ai-racer/                # the game (Next.js 16)
 │       ├── app/
-│       │   └── page.tsx     # home page, shows the game full window
+│       │   └── page.tsx         # home page, shows the game full window
 │       └── game/
-│           ├── track.ts     # track structure: shape, walls, checkpoints, start position
-│           ├── lapTimer.ts  # lap timer logic: current, last and best lap
-│           └── RaceTrack.tsx # draws the track, start box and lap timer
-├── ai/                      # AI 
+│           ├── Game.tsx         # game screen: canvas, draws everything
+│           ├── track/
+│           │   ├── track.ts     # track structure: shape, walls, checkpoints, start position
+│           │   └── drawTrack.ts # draws the track and start box
+│           └── race/
+│               ├── lapTimer.ts  # lap timer logic: current, last and best lap
+│               └── drawHud.ts   # draws the lap timer box
+├── ai/                          # AI
 └── README.md
 ```
 
