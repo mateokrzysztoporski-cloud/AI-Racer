@@ -23,15 +23,17 @@ export type Trainer = {
   steps: number; // physics steps since this generation started
   bestScore: number; // best score of all generations so far
   bestBrain: Brain | null; // the brain that got it
+  bestLap: number | null; // fastest lap of all generations, in ms
+  bestLapGeneration: number; // which generation drove it
 };
 
 // Settings
 
 const LAYERS = [INPUT_COUNT, 8, 6, 2]; // 8 sensors in, 2 hidden layers, gas + steer out
-const POPULATION = 100; // cars per generation
+export const POPULATION = 100; // cars per generation
 const THINK_EVERY = 4; // the brains decide every 4th physics step (30 times a second)
 const STUCK_TIME = 5; // seconds without a new checkpoint = out
-const MAX_TIME = 60; // seconds, then the generation ends anyway
+export const MAX_TIME = 60; // seconds, then the generation ends anyway
 
 // Trainer
 
@@ -44,6 +46,8 @@ export function createTrainer(track: Track): Trainer {
     steps: 0,
     bestScore: 0,
     bestBrain: null,
+    bestLap: null,
+    bestLapGeneration: 0,
   };
 }
 
@@ -63,6 +67,13 @@ export function updateTrainer(trainer: Trainer, track: Track, dt: number) {
       racer.controls = { gas, steer };
     }
     updateCar(car, racer.controls, track, dt);
+
+    // new fastest lap of all generations?
+    const lap = car.timer.bestLap;
+    if (lap !== null && (trainer.bestLap === null || lap < trainer.bestLap)) {
+      trainer.bestLap = lap;
+      trainer.bestLapGeneration = trainer.generation;
+    }
 
     // stuck or driving in circles: out
     if (car.time - car.lastProgressTime > STUCK_TIME) car.crashed = true;

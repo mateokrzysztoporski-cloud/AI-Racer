@@ -2,7 +2,7 @@
 
 import { CAR_LENGTH, CAR_WIDTH, type Car } from "./car";
 
-export function drawCar(ctx: CanvasRenderingContext2D, car: Car) {
+export function drawCar(ctx: CanvasRenderingContext2D, car: Car, highlighted = false) {
   const halfLength = CAR_LENGTH / 2;
   const halfWidth = CAR_WIDTH / 2;
 
@@ -28,6 +28,13 @@ export function drawCar(ctx: CanvasRenderingContext2D, car: Car) {
   // windshield, shows where the front is
   ctx.fillStyle = "rgba(0, 0, 0, 0.55)";
   ctx.fillRect(2, -halfWidth + 3, 5, CAR_WIDTH - 6);
+  // white outline for the car we are watching
+  
+  if (highlighted) {
+    ctx.strokeStyle = "#ffffff";
+    ctx.lineWidth = 2;
+    ctx.strokeRect(-halfLength - 3, -halfWidth - 3, CAR_LENGTH + 6, CAR_WIDTH + 6);
+  }
 
   ctx.restore();
 }

@@ -95,3 +95,75 @@ export function drawInputs(ctx: CanvasRenderingContext2D, names: string[], input
     ctx.fillText(value.toFixed(2), x + width - 10, rowY + 10);
   });
 }
+
+
+// Training info (right side, under the lap timer)
+
+export type TrainingInfo = {
+  generation: number;
+  alive: number; // AI cars still driving
+  population: number;
+  time: number; // seconds into this generation
+  maxTime: number;
+  speed: string; // the chosen speed, e.g. "5x" or "max"
+  realSpeed: number; // how fast it really runs, e.g. 4.8
+  bestLap: number | null; // fastest lap of all generations, in ms
+  bestLapGeneration: number;
+  hideCrashed: boolean;
+};
+
+export function drawTrainingInfo(ctx: CanvasRenderingContext2D, info: TrainingInfo) {
+  const rows = [
+    ["gen", String(info.generation)],
+    ["alive", `${info.alive}/${info.population}`],
+    ["time", `${info.time.toFixed(1)}/${info.maxTime} s`],
+    ["speed", `${info.speed} (${info.realSpeed.toFixed(1)}x)`],
+    ["best lap", formatTime(info.bestLap)],
+    ["from gen", info.bestLap === null ? "-" : String(info.bestLapGeneration)],
+  ];
+  const width = 160;
+  const height = 40 + rows.length * 17 + 32;
+  const x = WORLD_WIDTH - width - 10;
+  const y = 200;
+  const left = x + 12;
+  const right = x + width - 12;
+
+  // background
+  ctx.fillStyle = "rgba(0, 0, 0, 0.6)";
+  ctx.beginPath();
+  ctx.roundRect(x, y, width, height, 8);
+  ctx.fill();
+
+  ctx.font = `12px ${MONO_FONT}`;
+  ctx.fillStyle = "#a1a1aa";
+  ctx.textAlign = "left";
+  ctx.fillText("AI TRAINING", left, y + 22);
+
+  rows.forEach(([label, value], i) => {
+    drawTimerRow(ctx, label, value, left, right, y + 44 + i * 17);
+  });
+
+  // keys
+  ctx.font = `11px ${MONO_FONT}`;
+  ctx.fillStyle = "#a1a1aa";
+  ctx.textAlign = "left";
+  ctx.fillText("1-5 speed   M drive", left, y + height - 24);
+  ctx.fillText(`H ${info.hideCrashed ? "show" : "hide"} crashed cars`, left, y + height - 10);
+}
+
+// small one-line box under the lap timer, e.g. "M = AI training"
+export function drawHint(ctx: CanvasRenderingContext2D, text: string) {
+  const width = 160;
+  const x = WORLD_WIDTH - width - 10;
+  const y = 200;
+
+  ctx.fillStyle = "rgba(0, 0, 0, 0.6)";
+  ctx.beginPath();
+  ctx.roundRect(x, y, width, 30, 8);
+  ctx.fill();
+
+  ctx.font = `12px ${MONO_FONT}`;
+  ctx.fillStyle = "#a1a1aa";
+  ctx.textAlign = "left";
+  ctx.fillText(text, x + 12, y + 19);
+}

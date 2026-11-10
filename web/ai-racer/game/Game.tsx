@@ -3,13 +3,13 @@
 // Game screen: runs the game loop and draws everything every frame.
 
 import { useEffect, useRef } from "react";
-import { createTrainer, leader, updateTrainer } from "@/game/ai/trainer";
+import { createTrainer, leader, MAX_TIME, POPULATION, updateTrainer } from "@/game/ai/trainer";
 import { createCar, updateCar, type Car } from "@/game/car/car";
 import { listenToKeyboard } from "@/game/car/controls";
 import { drawCar } from "@/game/car/drawCar";
 import { drawSensors } from "@/game/car/drawSensors";
 import { INPUT_NAMES, readSensors, sensorInputs } from "@/game/car/sensors";
-import { drawInputs, drawLapTimer } from "@/game/race/drawHud";
+import { drawHint, drawInputs, drawLapTimer, drawTrainingInfo } from "@/game/race/drawHud";
 import { drawTrack } from "@/game/track/drawTrack";
 import { buildTrack, WORLD_HEIGHT, WORLD_WIDTH, type Track } from "@/game/track/track";
 
@@ -18,6 +18,11 @@ const STEP = 1 / 120;
 
 // false = hide the sensor lines and the AI inputs panel
 const SHOW_SENSORS = true;
+
+// training speeds for the keys 1 to 5 ("max" = as fast as the computer can)
+const SPEEDS = [1, 2, 5, 10, 1000];
+const SPEED_NAMES = ["1x", "2x", "5x", "10x", "max"];
+const PHYSICS_BUDGET = 12; // ms of physics per frame at most, so the page stays smooth
 
 export default function Game() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -43,11 +48,17 @@ export default function Game() {
     // AI training: 100 cars learning, M switches between you driving and the AI
     const trainer = createTrainer(track);
     let mode: "drive" | "train" = "drive";
+    let speedIndex = 0; // which of SPEEDS, keys 1 to 5
+    let hideCrashed = false; // H hides crashed AI cars
+    let realSpeed = 1; // how fast the game really runs, measured
 
-    // Space = new car in the start box, M = switch between driving and training
+    // Space = new car, M = drive / train, 1-5 = training speed, H = hide crashed cars
     const keyboard = listenToKeyboard((key) => {
       if (key === "Space" && mode === "drive") cars = [createCar(track.start)];
       if (key === "KeyM") mode = mode === "drive" ? "train" : "drive";
+      if (key === "KeyH") hideCrashed = !hideCrashed;
+      const number = ["Digit1", "Digit2", "Digit3", "Digit4", "Digit5"].indexOf(key);
+      if (number >= 0) speedIndex = number;
     });
 
     // Game loop
@@ -56,18 +67,32 @@ export default function Game() {
     let leftover = 0; // time not simulated yet TBD
 
     const frame = (now: number) => {
-      // physics in fixed steps
-      leftover += Math.min((now - lastTime) / 1000, 0.1);
+     
+          // physics in fixed steps, more of them when training is sped up
+      const frameTime = Math.min((now - lastTime) / 1000, 0.1);
       lastTime = now;
+      const speed = mode === "train" ? SPEEDS[speedIndex] : 1;
+      leftover += frameTime * speed;
+
+      const stopAt = performance.now() + PHYSICS_BUDGET;
+      let steps = 0;
       while (leftover >= STEP) {
-          if (mode === "drive") {
+        if (performance.now() > stopAt) {
+          leftover = 0; // the computer can't keep up, skip the rest
+          break;
+        }
+        if (mode === "drive") {
           const controls = keyboard.read();
           for (const car of cars) updateCar(car, controls, track, STEP);
         } else {
           updateTrainer(trainer, track, STEP);
         }
         leftover -= STEP;
+        steps += 1;
       }
+
+      // measured speed, smoothed so the number doesn't jump around
+      if (frameTime > 0) realSpeed = realSpeed * 0.95 + ((steps * STEP) / frameTime) * 0.05;
 
       // draw
       ctx.drawImage(background, 0, 0, WORLD_WIDTH, WORLD_HEIGHT);
@@ -81,7 +106,11 @@ export default function Game() {
       if (SHOW_SENSORS && !watched.crashed) {
         drawSensors(ctx, watched, sensors);
       }
-      for (const car of shown) drawCar(ctx, car);
+      for (const car of shown) {
+        if (car === watched || (hideCrashed && car.crashed)) continue;
+        drawCar(ctx, car);
+      }
+      drawCar(ctx, watched, mode === "train"); // the watched car on top, outlined in training
 
       // lap timer of the watched car, in the top right corner
       const player = watched;
@@ -93,6 +122,23 @@ export default function Game() {
         drawInputs(ctx, INPUT_NAMES, inputs);
       }
 
+      // training info under the lap timer, or a hint how to start training
+      if (mode === "train") {
+        drawTrainingInfo(ctx, {
+          generation: trainer.generation,
+          alive: trainer.racers.filter((racer) => !racer.car.crashed).length,
+          population: POPULATION,
+          time: trainer.time,
+          maxTime: MAX_TIME,
+          speed: SPEED_NAMES[speedIndex],
+          realSpeed,
+          bestLap: trainer.bestLap,
+          bestLapGeneration: trainer.bestLapGeneration,
+          hideCrashed,
+        });
+      } else {
+        drawHint(ctx, "M = AI training");
+      }
       frameId = requestAnimationFrame(frame);
     };
 
