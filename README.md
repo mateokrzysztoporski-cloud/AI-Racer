@@ -12,6 +12,8 @@ A race game in the browser where we will train our own AI agent and neural netwo
 │       └── game/
 │           ├── Game.tsx         # game screen: game loop, draws everything
 │           ├── geometry.ts      # line crossing math (crashes, checkpoints, sensors)
+│           ├── ai/
+│           │   └── brain.ts     # neural network: sensors in, gas and steer 
 │           ├── car/
 │           │   ├── car.ts       # car data, physics, crashes, checkpoints
 │           │   ├── controls.ts  # keyboard: arrows / WASD, Space = restart
