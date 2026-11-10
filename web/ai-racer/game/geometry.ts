@@ -12,3 +12,17 @@ export function linesCross(a: Point, b: Point, c: Point, d: Point): boolean {
 function side(a: Point, b: Point, p: Point): number {
   return (b.x - a.x) * (p.y - a.y) - (b.y - a.y) * (p.x - a.x);
 }
+
+
+// how far along line a-b it crosses line c-d: 0 = at a, 1 = at b, null = no crossing
+export function crossingAt(a: Point, b: Point, c: Point, d: Point): number | null {
+  const rx = b.x - a.x;
+  const ry = b.y - a.y;
+  const sx = d.x - c.x;
+  const sy = d.y - c.y;
+  const denominator = rx * sy - ry * sx;
+  if (denominator === 0) return null; // parallel lines never cross
+  const t = ((c.x - a.x) * sy - (c.y - a.y) * sx) / denominator; // along a-b
+  const u = ((c.x - a.x) * ry - (c.y - a.y) * rx) / denominator; // along c-d
+  return t >= 0 && t <= 1 && u >= 0 && u <= 1 ? t : null;
+}

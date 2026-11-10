@@ -6,12 +6,17 @@ import { useEffect, useRef } from "react";
 import { createCar, updateCar, type Car } from "@/game/car/car";
 import { listenToKeyboard } from "@/game/car/controls";
 import { drawCar } from "@/game/car/drawCar";
-import { drawLapTimer } from "@/game/race/drawHud";
+import { drawSensors } from "@/game/car/drawSensors";
+import { INPUT_NAMES, readSensors, sensorInputs } from "@/game/car/sensors";
+import { drawInputs, drawLapTimer } from "@/game/race/drawHud";
 import { drawTrack } from "@/game/track/drawTrack";
 import { buildTrack, WORLD_HEIGHT, WORLD_WIDTH, type Track } from "@/game/track/track";
 
 // physics step in seconds
 const STEP = 1 / 120;
+
+// false = hide the sensor lines and the AI inputs panel
+const SHOW_SENSORS = true;
 
 export default function Game() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -56,11 +61,23 @@ export default function Game() {
 
       // draw
       ctx.drawImage(background, 0, 0, WORLD_WIDTH, WORLD_HEIGHT);
+      // sensor lines of the first car, drawn under the cars
+      const watched = cars[0];
+      const sensors = readSensors(watched, track);
+      if (SHOW_SENSORS && !watched.crashed) {
+        drawSensors(ctx, watched, sensors);
+      }
       for (const car of cars) drawCar(ctx, car);
 
-      // lap timer of the first car, in the top left corner
+      // lap timer of the first car, in the top right corner
       const player = cars[0];
       drawLapTimer(ctx, player.timer, player.time * 1000);
+
+      // AI inputs of the first car, in the bottom left corner
+      if (SHOW_SENSORS && !watched.crashed) {
+        const inputs = sensorInputs(watched, sensors);
+        drawInputs(ctx, INPUT_NAMES, inputs);
+      }
 
       frameId = requestAnimationFrame(frame);
     };

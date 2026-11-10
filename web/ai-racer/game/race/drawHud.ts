@@ -1,6 +1,6 @@
-// Draws the lap timer box in the top right corner.
+// Draws the lap timer box in the top right corner and the AI inputs in the bottom left.
 
-import { WORLD_WIDTH } from "@/game/track/track";
+import { WORLD_HEIGHT, WORLD_WIDTH } from "@/game/track/track";
 import { currentLapTime, formatTime, type LapTimer } from "./lapTimer";
 
 const MONO_FONT = "ui-monospace, Menlo, monospace";
@@ -49,4 +49,49 @@ function drawTimerRow(
   ctx.fillStyle = "#ffffff";
   ctx.textAlign = "right";
   ctx.fillText(time, right, y);
+}
+
+// AI inputs
+
+// what the AI sees: one bar per input, red = wall close, green = far, blue = speed
+export function drawInputs(ctx: CanvasRenderingContext2D, names: string[], inputs: number[]) {
+  const rowHeight = 14;
+  const width = 190;
+  const height = 30 + inputs.length * rowHeight;
+  const x = 10;
+  const y = WORLD_HEIGHT - height - 10;
+  const barX = x + 58;
+  const barWidth = 80;
+
+  // background
+  ctx.fillStyle = "rgba(0, 0, 0, 0.6)";
+  ctx.beginPath();
+  ctx.roundRect(x, y, width, height, 8);
+  ctx.fill();
+
+  ctx.font = `12px ${MONO_FONT}`;
+  ctx.fillStyle = "#a1a1aa";
+  ctx.textAlign = "left";
+  ctx.fillText("AI INPUTS", x + 12, y + 20);
+
+  inputs.forEach((value, i) => {
+    const rowY = y + 30 + i * rowHeight;
+    const isSpeed = i === inputs.length - 1;
+
+    // name
+    ctx.fillStyle = "#a1a1aa";
+    ctx.textAlign = "left";
+    ctx.fillText(names[i], x + 12, rowY + 10);
+
+    // bar
+    ctx.fillStyle = "rgba(255, 255, 255, 0.1)";
+    ctx.fillRect(barX, rowY + 2, barWidth, 9);
+    ctx.fillStyle = isSpeed ? "#60a5fa" : `hsl(${Math.round(value * 120)}, 90%, 55%)`;
+    ctx.fillRect(barX, rowY + 2, barWidth * Math.min(Math.max(value, 0), 1), 9);
+
+    // number
+    ctx.fillStyle = "#ffffff";
+    ctx.textAlign = "right";
+    ctx.fillText(value.toFixed(2), x + width - 10, rowY + 10);
+  });
 }

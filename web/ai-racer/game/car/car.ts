@@ -23,8 +23,8 @@ export type Car = {
 
 export const CAR_LENGTH = 30;
 export const CAR_WIDTH = 16;
+export const MAX_SPEED = 600; // pixels per second
 
-const MAX_SPEED = 600; // pixels per second
 const MAX_REVERSE = 150;
 const ACCELERATION = 700; // speed gained per second
 const BRAKING = 1400; // speed lost per second when braking
