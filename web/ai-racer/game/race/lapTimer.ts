@@ -33,6 +33,7 @@ export function currentLapTime(timer: LapTimer, now: number): number {
 // ms -> "m:ss.mmm", e.g. 83456 -> "1:23.456"
 export function formatTime(ms: number | null): string {
   if (ms === null) return "-:--.---";
+  ms = Math.round(ms); // e.g. 15499.9999 -> 15500 (tiny errors from many small steps)
   const minutes = Math.floor(ms / 60000);
   const seconds = Math.floor((ms % 60000) / 1000);
   const millis = Math.floor(ms % 1000);

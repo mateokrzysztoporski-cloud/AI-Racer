@@ -17,7 +17,8 @@ A race game in the browser where we will train our own AI agent and neural netwo
 │           │   ├── evolution.ts # score + breeding the next generation
 │           │   ├── trainer.ts   # 100 AI cars, generations, stuck check, best lap
 │           │   ├── stats.ts     # numbers per generation (best, top 10, average, laps)
-│           │   └── drawChart.ts # progress chart, P saves it as a PNG
+│           │   ├── drawChart.ts # progress chart, P saves it as a PNG
+│           │   └── saveBrain.ts # saves / loads the best brain (browser + .json file)
 │           ├── car/
 │           │   ├── car.ts       # car data, physics, crashes, checkpoints
 │           │   ├── controls.ts  # keyboard: arrows / WASD drive, other keys go to the game
@@ -31,7 +32,7 @@ A race game in the browser where we will train our own AI agent and neural netwo
 │           └── race/
 │               ├── lapTimer.ts  # lap timer logic: current, last and best lap
 │               └── drawHud.ts   # draws the lap timer, AI inputs panel and training box
-├── ai/                          # saved brains and training results (coming later)
+├── ai/                          # saved brains (.json) and training results 
 └── README.md
 ```
 
@@ -59,6 +60,9 @@ Then open http://localhost:3000
 | H | hide / show crashed AI cars |
 | G | show / hide the progress chart |
 | P | save the progress chart as a PNG image |
+| B | download the best brain as a .json file |
+| L | load a brain file and continue training from it |
+| N | start a new training (forgets the saved one) |
 
 ## AI training
 
@@ -88,4 +92,4 @@ pnpm build
 - [x] Car sensors (distance to the walls)
 - [x] AI that learns to drive
 - [x] Generation history and progress chart
-- [ ] Save and load the best brain
+- [x] Save and load the best brain

@@ -122,7 +122,7 @@ export function drawTrainingInfo(ctx: CanvasRenderingContext2D, info: TrainingIn
     ["from gen", info.bestLap === null ? "-" : String(info.bestLapGeneration)],
   ];
   const width = 160;
-  const height = 40 + rows.length * 17 + 46;
+  const height = 40 + rows.length * 17 + 60;
   const x = WORLD_WIDTH - width - 10;
   const y = 200;
   const left = x + 12;
@@ -147,16 +147,17 @@ export function drawTrainingInfo(ctx: CanvasRenderingContext2D, info: TrainingIn
   ctx.font = `11px ${MONO_FONT}`;
   ctx.fillStyle = "#a1a1aa";
   ctx.textAlign = "left";
-  ctx.fillText("G chart   P save png", left, y + height - 38);
-  ctx.fillText("1-5 speed   M drive", left, y + height - 24);
-  ctx.fillText(`H ${info.hideCrashed ? "show" : "hide"} crashed cars`, left, y + height - 10);
+  ctx.fillText("1-5 speed   M drive", left, y + height - 52);
+  ctx.fillText(`H ${info.hideCrashed ? "show" : "hide"} crashed cars`, left, y + height - 38);
+  ctx.fillText("G chart   P save png", left, y + height - 24);
+  ctx.fillText("B save L load N new", left, y + height - 10);
 }
 
 // small one-line box under the lap timer, e.g. "M = AI training"
-export function drawHint(ctx: CanvasRenderingContext2D, text: string) {
-  const width = 160;
+export function drawHint(ctx: CanvasRenderingContext2D, text: string, y = 200) {
+  ctx.font = `12px ${MONO_FONT}`;
+  const width = Math.max(160, ctx.measureText(text).width + 24); // wider for longer text
   const x = WORLD_WIDTH - width - 10;
-  const y = 200;
 
   ctx.fillStyle = "rgba(0, 0, 0, 0.6)";
   ctx.beginPath();

@@ -4,8 +4,9 @@
 
 import { useEffect, useRef } from "react";
 import { drawChart, saveChartImage } from "@/game/ai/drawChart";
+import { downloadTraining, forgetBrowserSave, loadFromBrowser, pickTrainingFile, saveToBrowser, trainingToSave } from "@/game/ai/saveBrain";
 import { describeGeneration } from "@/game/ai/stats";
-import { createTrainer, leader, MAX_TIME, POPULATION, updateTrainer } from "@/game/ai/trainer";
+import { createTrainer, LAYERS, leader, MAX_TIME, POPULATION, restoreTrainer, updateTrainer } from "@/game/ai/trainer";
 import { createCar, updateCar, type Car } from "@/game/car/car";
 import { listenToKeyboard } from "@/game/car/controls";
 import { drawCar } from "@/game/car/drawCar";
@@ -49,20 +50,59 @@ export default function Game() {
 
     // AI training: 100 cars learning, M switches between you driving and the AI
     const trainer = createTrainer(track);
+
+    // continue where the last training stopped, if it was saved in this browser
+    const saved = loadFromBrowser(LAYERS);
+    if (saved) restoreTrainer(trainer, saved, track);
+    let savedGenerations = trainer.history.length; // generations already saved in the browser
+
+    // short message on the right, e.g. "brain downloaded"
+    let notice = saved ? `continuing from generation ${saved.generation}` : "";
+    let noticeUntil = saved ? performance.now() + 4000 : 0; // 0 = nothing to show
+    const notify = (text: string) => {
+      notice = text;
+      noticeUntil = performance.now() + 2500;
+    };
     let mode: "drive" | "train" = "drive";
     let speedIndex = 0; // which of SPEEDS, keys 1 to 5
     let hideCrashed = false; // H hides crashed AI cars
     let realSpeed = 1; // how fast the game really runs, measured
     let showChart = true; // G shows / hides the progress chart
-    let logged = 0; // generations already written to the browser console
+    let logged = trainer.history.length; // generations already written to the browser console
 
-    // Space = new car, M = drive / train, 1-5 = speed, H = hide crashed, G = chart, P = save chart
+    // Space = new car, M = drive / train, 1-5 = speed, H = hide crashed, G = chart,
+    // P = save chart, B = download brain, L = load brain, N = new training
     const keyboard = listenToKeyboard((key) => {
       if (key === "Space" && mode === "drive") cars = [createCar(track.start)];
       if (key === "KeyM") mode = mode === "drive" ? "train" : "drive";
       if (key === "KeyH") hideCrashed = !hideCrashed;
       if (key === "KeyG") showChart = !showChart;
       if (key === "KeyP") saveChartImage(trainer.history);
+      if (key === "KeyB") {
+        const toSave = trainingToSave(trainer);
+        if (toSave) downloadTraining(toSave);
+        notify(toSave ? "brain downloaded (.json)" : "no brain yet, wait 1 generation");
+      }
+      if (key === "KeyL") {
+        pickTrainingFile(LAYERS, (loaded) => {
+          if (!loaded) {
+            notify("not a brain file for this network");
+            return;
+          }
+          restoreTrainer(trainer, loaded, track);
+          savedGenerations = trainer.history.length;
+          logged = trainer.history.length;
+          mode = "train";
+          notify(`loaded brain from generation ${loaded.generation}`);
+        });
+      }
+      if (key === "KeyN") {
+        Object.assign(trainer, createTrainer(track));
+        forgetBrowserSave();
+        savedGenerations = 0;
+        logged = 0;
+        notify("new training started");
+      }
       const number = ["Digit1", "Digit2", "Digit3", "Digit4", "Digit5"].indexOf(key);
       if (number >= 0) speedIndex = number;
     });
@@ -105,7 +145,12 @@ export default function Game() {
         console.log(describeGeneration(trainer.history[logged]));
         logged += 1;
       }
-
+      // after every generation: save the training in this browser
+      if (trainer.history.length > savedGenerations) {
+        savedGenerations = trainer.history.length;
+        const toSave = trainingToSave(trainer);
+        if (toSave) saveToBrowser(toSave);
+      }
       // draw
       ctx.drawImage(background, 0, 0, WORLD_WIDTH, WORLD_HEIGHT);
 
@@ -152,6 +197,8 @@ export default function Game() {
       } else {
         drawHint(ctx, "M = AI training");
       }
+      // short message, e.g. after saving or loading
+      if (performance.now() < noticeUntil) drawHint(ctx, notice, mode === "train" ? 412 : 240);
       frameId = requestAnimationFrame(frame);
     };
 
