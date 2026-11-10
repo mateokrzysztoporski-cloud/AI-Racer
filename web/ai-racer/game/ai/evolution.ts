@@ -14,16 +14,17 @@ const MUTATION_AMOUNT = 0.5; // how big a change can be
 
 // Score
 
-// further = better, at the same progress faster = better
-// time is at most 60 s
+// further = better. With the same checkpoints, the car that survived longer wins:
+// braking before a corner beats crashing into it, so the AI learns to slow down.
+// Speed still counts: in 60 s, a faster car passes more checkpoints.
 export function score(car: Car): number {
-  return car.checkpointsPassed * 100 - car.lastProgressTime;
+  return car.checkpointsPassed + Math.min(car.time, 60) / 100;
 }
 
 // Breeding
 
 export function nextGeneration(scored: Scored[], size: number): Brain[] {
-  const ranked = [...scored].sort((a, b) => b.score - a.score);
+    const ranked = shuffle([...scored]).sort((a, b) => b.score - a.score);
 
   // the best ones stay exactly as they are, so the best result is never lost
   const next = ranked.slice(0, ELITE_COUNT).map((racer) => copyBrain(racer.brain));
@@ -43,4 +44,14 @@ export function nextGeneration(scored: Scored[], size: number): Brain[] {
 
 function pickRandom<T>(list: T[]): T {
   return list[Math.floor(Math.random() * list.length)];
+}
+
+
+// random order, so cars with the same score get the same chance
+function shuffle<T>(list: T[]): T[] {
+  for (let i = list.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [list[i], list[j]] = [list[j], list[i]];
+  }
+  return list;
 }
