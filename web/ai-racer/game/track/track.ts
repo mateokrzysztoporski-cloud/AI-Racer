@@ -1,6 +1,6 @@
 // Track: shape, walls, checkpoints and start position.
 
-
+import { buildWallGrid, type WallGrid } from "./wallGrid";
 // Types
 
 export type Point = { x: number; y: number };
@@ -16,6 +16,7 @@ export type Track = {
   left: Point[]; // left edge
   right: Point[]; // right edge
   walls: Segment[]; // both edges 
+  grid: WallGrid; // walls sorted into squares, for fast lookups
   checkpoints: Segment[]; // lines across the road in driving order,
   start: StartPosition; // car start spot behind the line
   width: number;
@@ -125,12 +126,13 @@ export function buildTrack(): Track {
       travelled = 0;
     }
   }
-
+  const walls = [...loopToSegments(left), ...loopToSegments(right)];
   return {
     center,
     left,
     right,
-    walls: [...loopToSegments(left), ...loopToSegments(right)],
+    walls,
+    grid: buildWallGrid(walls, WORLD_WIDTH, WORLD_HEIGHT),
     checkpoints,
     start: findStart(center, START_BEHIND_LINE),
     width: ROAD_WIDTH,

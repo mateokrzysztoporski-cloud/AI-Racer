@@ -1,4 +1,4 @@
-// Controls: keyboard, Arrows and WASD both work, Space = restart.
+// Controls: keyboard. Arrows and WASD drive, other keys (Space, M) go to the game.
 
 // what the car is told to do, the AI will give the same two numbers later
 export type Controls = {
@@ -18,16 +18,12 @@ const BRAKE_KEYS = ["ArrowDown", "KeyS"];
 const LEFT_KEYS = ["ArrowLeft", "KeyA"];
 const RIGHT_KEYS = ["ArrowRight", "KeyD"];
 
-export function listenToKeyboard(onRestart: () => void): Keyboard {
+export function listenToKeyboard(onPress: (key: string) => void): Keyboard {
   const pressed = new Set<string>(); // keys held down right now
 
-  function onKeyDown(event: KeyboardEvent) {
-    if (event.code === "Space") {
-      event.preventDefault(); // no page scrolling
-      if (!event.repeat) onRestart();
-      return;
-    }
-    if (event.code.startsWith("Arrow")) event.preventDefault();
+   function onKeyDown(event: KeyboardEvent) {
+    if (event.code === "Space" || event.code.startsWith("Arrow")) event.preventDefault(); // no page scrolling
+    if (!event.repeat) onPress(event.code); // a single press, e.g. Space or M
     pressed.add(event.code);
   }
 

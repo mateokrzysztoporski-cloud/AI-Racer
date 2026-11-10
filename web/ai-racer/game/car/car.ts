@@ -3,6 +3,7 @@
 import { linesCross } from "@/game/geometry";
 import { createLapTimer, crossStartLine, type LapTimer } from "@/game/race/lapTimer";
 import type { Point, Segment, StartPosition, Track } from "@/game/track/track";
+import { wallsNear } from "@/game/track/wallGrid";
 import type { Controls } from "./controls";
 
 // Types
@@ -16,6 +17,7 @@ export type Car = {
   time: number; // seconds since the car started
   nextCheckpoint: number; // which checkpoint has to be passed next
   checkpointsPassed: number; // how far it got
+  lastProgressTime: number; // when it passed its last checkpoint (for the AI score)
   timer: LapTimer;
 };
 
@@ -44,6 +46,7 @@ export function createCar(start: StartPosition): Car {
     time: 0,
     nextCheckpoint: 0, // the start line, crossing it starts lap 1
     checkpointsPassed: 0,
+    lastProgressTime: 0,
     timer: createLapTimer(),
   };
 }
@@ -77,7 +80,7 @@ export function updateCar(car: Car, controls: Controls, track: Track, dt: number
   car.position.y += Math.sin(car.angle) * car.speed * dt;
 
   // crash: stop for good
-  if (hitsWall(car, track.walls)) {
+  if (hitsWall(car, wallsNear(track.grid, car.position, CAR_LENGTH))) {
     car.crashed = true;
     car.speed = 0;
     return;
@@ -90,6 +93,7 @@ export function updateCar(car: Car, controls: Controls, track: Track, dt: number
       car.timer = crossStartLine(car.timer, car.time * 1000);
     }
     car.checkpointsPassed += 1;
+    car.lastProgressTime = car.time;
     car.nextCheckpoint = (car.nextCheckpoint + 1) % track.checkpoints.length;
   }
 }

@@ -2,6 +2,7 @@
 
 import { crossingAt } from "@/game/geometry";
 import type { Point, Track } from "@/game/track/track";
+import { wallsNear } from "@/game/track/wallGrid";
 import { MAX_SPEED, type Car } from "./car";
 
 export type Sensor = {
@@ -39,10 +40,7 @@ export function readSensors(car: Car, track: Track): Sensor[] {
   const start = car.position;
 
   // only walls close enough to be seen, the rest is skipped 
-  const reach = SENSOR_RANGE + 20;
-  const nearWalls = track.walls.filter(
-    (wall) => Math.abs(wall.a.x - start.x) < reach && Math.abs(wall.a.y - start.y) < reach,
-  );
+  const nearWalls = wallsNear(track.grid, start, SENSOR_RANGE);
 
   return SENSOR_DEGREES.map((degrees) => {
     const direction = car.angle + (degrees * Math.PI) / 180;
