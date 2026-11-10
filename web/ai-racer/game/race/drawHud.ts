@@ -122,7 +122,7 @@ export function drawTrainingInfo(ctx: CanvasRenderingContext2D, info: TrainingIn
     ["from gen", info.bestLap === null ? "-" : String(info.bestLapGeneration)],
   ];
   const width = 160;
-  const height = 40 + rows.length * 17 + 32;
+  const height = 40 + rows.length * 17 + 46;
   const x = WORLD_WIDTH - width - 10;
   const y = 200;
   const left = x + 12;
@@ -147,6 +147,7 @@ export function drawTrainingInfo(ctx: CanvasRenderingContext2D, info: TrainingIn
   ctx.font = `11px ${MONO_FONT}`;
   ctx.fillStyle = "#a1a1aa";
   ctx.textAlign = "left";
+  ctx.fillText("G chart   P save png", left, y + height - 38);
   ctx.fillText("1-5 speed   M drive", left, y + height - 24);
   ctx.fillText(`H ${info.hideCrashed ? "show" : "hide"} crashed cars`, left, y + height - 10);
 }

@@ -15,7 +15,9 @@ A race game in the browser where we will train our own AI agent and neural netwo
 │           ├── ai/
 │           │   ├── brain.ts     # neural network: sensors in, gas and steer out
 │           │   ├── evolution.ts # score + breeding the next generation
-│           │   └── trainer.ts   # 100 AI cars, generations, stuck check, best lap
+│           │   ├── trainer.ts   # 100 AI cars, generations, stuck check, best lap
+│           │   ├── stats.ts     # numbers per generation (best, top 10, average, laps)
+│           │   └── drawChart.ts # progress chart, P saves it as a PNG
 │           ├── car/
 │           │   ├── car.ts       # car data, physics, crashes, checkpoints
 │           │   ├── controls.ts  # keyboard: arrows / WASD drive, other keys go to the game
@@ -55,6 +57,8 @@ Then open http://localhost:3000
 | M | switch between you driving and AI training |
 | 1 – 5 | training speed: 1x, 2x, 5x, 10x, max |
 | H | hide / show crashed AI cars |
+| G | show / hide the progress chart |
+| P | save the progress chart as a PNG image |
 
 ## AI training
 
@@ -83,5 +87,5 @@ pnpm build
 - [x] Car you can drive with the keyboard
 - [x] Car sensors (distance to the walls)
 - [x] AI that learns to drive
-- [ ] Generation history and progress chart
+- [x] Generation history and progress chart
 - [ ] Save and load the best brain

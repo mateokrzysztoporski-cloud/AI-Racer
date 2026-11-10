@@ -3,6 +3,8 @@
 // Game screen: runs the game loop and draws everything every frame.
 
 import { useEffect, useRef } from "react";
+import { drawChart, saveChartImage } from "@/game/ai/drawChart";
+import { describeGeneration } from "@/game/ai/stats";
 import { createTrainer, leader, MAX_TIME, POPULATION, updateTrainer } from "@/game/ai/trainer";
 import { createCar, updateCar, type Car } from "@/game/car/car";
 import { listenToKeyboard } from "@/game/car/controls";
@@ -51,12 +53,16 @@ export default function Game() {
     let speedIndex = 0; // which of SPEEDS, keys 1 to 5
     let hideCrashed = false; // H hides crashed AI cars
     let realSpeed = 1; // how fast the game really runs, measured
+    let showChart = true; // G shows / hides the progress chart
+    let logged = 0; // generations already written to the browser console
 
-    // Space = new car, M = drive / train, 1-5 = training speed, H = hide crashed cars
+    // Space = new car, M = drive / train, 1-5 = speed, H = hide crashed, G = chart, P = save chart
     const keyboard = listenToKeyboard((key) => {
       if (key === "Space" && mode === "drive") cars = [createCar(track.start)];
       if (key === "KeyM") mode = mode === "drive" ? "train" : "drive";
       if (key === "KeyH") hideCrashed = !hideCrashed;
+      if (key === "KeyG") showChart = !showChart;
+      if (key === "KeyP") saveChartImage(trainer.history);
       const number = ["Digit1", "Digit2", "Digit3", "Digit4", "Digit5"].indexOf(key);
       if (number >= 0) speedIndex = number;
     });
@@ -93,6 +99,12 @@ export default function Game() {
 
       // measured speed, smoothed so the number doesn't jump around
       if (frameTime > 0) realSpeed = realSpeed * 0.95 + ((steps * STEP) / frameTime) * 0.05;
+
+      // one line per finished generation in the browser console (Cmd + Option + J)
+      while (logged < trainer.history.length) {
+        console.log(describeGeneration(trainer.history[logged]));
+        logged += 1;
+      }
 
       // draw
       ctx.drawImage(background, 0, 0, WORLD_WIDTH, WORLD_HEIGHT);
@@ -136,6 +148,7 @@ export default function Game() {
           bestLapGeneration: trainer.bestLapGeneration,
           hideCrashed,
         });
+      if (showChart) drawChart(ctx, trainer.history);
       } else {
         drawHint(ctx, "M = AI training");
       }

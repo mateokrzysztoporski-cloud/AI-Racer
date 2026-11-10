@@ -6,6 +6,7 @@ import { INPUT_COUNT, readSensors, sensorInputs } from "@/game/car/sensors";
 import type { Track } from "@/game/track/track";
 import { createBrain, think, type Brain } from "./brain";
 import { nextGeneration, score } from "./evolution";
+import { measureGeneration, type GenerationStats } from "./stats";
 
 // Types
 
@@ -24,6 +25,7 @@ export type Trainer = {
   bestScore: number; // best score of all generations so far
   bestBrain: Brain | null; // the brain that got it
   bestLap: number | null; // fastest lap of all generations, in ms
+  history: GenerationStats[]; // one row of stats per finished generation
   bestLapGeneration: number; // which generation drove it
 };
 
@@ -46,6 +48,7 @@ export function createTrainer(track: Track): Trainer {
     steps: 0,
     bestScore: 0,
     bestBrain: null,
+    history: [],
     bestLap: null,
     bestLapGeneration: 0,
   };
@@ -102,6 +105,10 @@ function createRacer(brain: Brain, track: Track): Racer {
 }
 
 function startNextGeneration(trainer: Trainer, track: Track) {
+   // save this generation's numbers for the chart
+  trainer.history.push(
+    measureGeneration(trainer.generation, trainer.racers, track.checkpoints.length, trainer.time),
+  );
   const scored = trainer.racers.map((racer) => ({ brain: racer.brain, score: score(racer.car) }));
 
   // remember the best brain ever
