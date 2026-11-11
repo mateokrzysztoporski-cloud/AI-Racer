@@ -121,7 +121,7 @@ Four problems blocked the project. Each one was measured, fixed, and measured ag
 
 ### 1. The AI got stuck at the hairpin
 
-<sub>reward design · [the fix: commit 52c37c7](https://github.com/mateokrzysztoporski-cloud/AI-Racer/commit/52c37c7)</sub>
+<sub>reward design · [the fix: commit 52c37c7](https://github.com/mkrzysztoporski/AI-Racer/commit/52c37c7)</sub>
 
 **Problem:** the first score rewarded reaching checkpoints **fast**. All cars learned to rush up the
 hill and crash into the top-left hairpin. A car that braked arrived later, scored lower, and was thrown
@@ -149,7 +149,7 @@ same score are shuffled, so no brain wins just because of its place in the list.
 
 ### 2. 100 cars were too slow
 
-<sub>performance · [the fix: commit 208a705](https://github.com/mateokrzysztoporski-cloud/AI-Racer/commit/208a705)</sub>
+<sub>performance · [the fix: commit 208a705](https://github.com/mkrzysztoporski/AI-Racer/commit/208a705)</sub>
 
 **Problem:** every car checked all **2,304** wall pieces on every physics step. For 100 cars that is
 over **27 million** wall checks per second of driving, so the game only ran at **1.2× real time**:
@@ -343,4 +343,4 @@ flowchart TB
 
 TypeScript · Next.js 16 · React 19 · HTML Canvas · no ML or physics libraries
 
-Built by [Mateusz Krzysztoporski](https://github.com/mateokrzysztoporski-cloud)
+Built by [Mateusz Krzysztoporski](https://github.com/mkrzysztoporski)
