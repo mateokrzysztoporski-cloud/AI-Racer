@@ -243,7 +243,7 @@ pnpm install   # first time only
 pnpm dev
 ```
 
-Open http://localhost:3000, press **M** to start training, and **5** for maximum speed.
+Open http://localhost:3000. The first visit shows the trained AI from generation 174: press **N** to train from zero, and **5** for maximum speed.
 The first full laps usually appear after 20–40 generations.
 
 ### Controls
@@ -259,6 +259,7 @@ The first full laps usually appear after 20–40 generations.
 | B / L | download the best brain / load a brain file |
 | C | download the training history as CSV |
 | N | start a new training |
+| **T** | watch the trained AI from generation 174 (also shown on the first visit) |
 
 Training is saved in the browser after every generation, so it continues after a reload.
 
