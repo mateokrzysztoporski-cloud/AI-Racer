@@ -2,6 +2,8 @@
 
 **100 cars learn to race a Formula 1 track from scratch, using a neural network and evolution, right in the browser.**
 
+**[▶ Watch it live](https://ai-racer-eight.vercel.app)**: the trained AI starts driving right away. Press N to watch it learn from zero.
+
 No machine learning libraries: the neural network, the genetic algorithm, the physics and the
 collision detection are written from scratch in TypeScript, so every number the AI learns can be explained.
 
@@ -243,7 +245,7 @@ pnpm install   # first time only
 pnpm dev
 ```
 
-Open http://localhost:3000, press **M** to start training, and **5** for maximum speed.
+Open http://localhost:3000. The first visit shows the trained AI from generation 174: press **N** to train from zero, and **5** for maximum speed.
 The first full laps usually appear after 20–40 generations.
 
 ### Controls
@@ -259,6 +261,7 @@ The first full laps usually appear after 20–40 generations.
 | B / L | download the best brain / load a brain file |
 | C | download the training history as CSV |
 | N | start a new training |
+| **T** | watch the trained AI from generation 174 (also shown on the first visit) |
 
 Training is saved in the browser after every generation, so it continues after a reload.
 

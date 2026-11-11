@@ -20,6 +20,7 @@ export type SavedTraining = {
 // Settings
 
 const STORAGE_KEY = "ai-racer-training"; // name of the save in the browser
+const DEMO_FILE = "/ai-racer-brain-gen-174.json"; // trained brain for visitors, in public/
 
 // Saving
 
@@ -66,6 +67,16 @@ export function loadFromBrowser(layers: number[]): SavedTraining | null {
     return text ? parseTraining(text, layers) : null;
   } catch {
     return null;
+  }
+}
+
+// the trained brain that comes with the game, null if it can't be loaded
+export async function loadDemoBrain(layers: number[]): Promise<SavedTraining | null> {
+  try {
+    const response = await fetch(DEMO_FILE);
+    return response.ok ? parseTraining(await response.text(), layers) : null;
+  } catch {
+    return null; // offline: start from zero
   }
 }
 
