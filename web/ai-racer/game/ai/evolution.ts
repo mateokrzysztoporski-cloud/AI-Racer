@@ -24,7 +24,7 @@ export function score(car: Car): number {
 // Breeding
 
 export function nextGeneration(scored: Scored[], size: number): Brain[] {
-    const ranked = shuffle([...scored]).sort((a, b) => b.score - a.score);
+  const ranked = shuffle([...scored]).sort((a, b) => b.score - a.score);
 
   // the best ones stay exactly as they are, so the best result is never lost
   const next = ranked.slice(0, ELITE_COUNT).map((racer) => copyBrain(racer.brain));
@@ -45,7 +45,6 @@ export function nextGeneration(scored: Scored[], size: number): Brain[] {
 function pickRandom<T>(list: T[]): T {
   return list[Math.floor(Math.random() * list.length)];
 }
-
 
 // random order, so cars with the same score get the same chance
 function shuffle<T>(list: T[]): T[] {

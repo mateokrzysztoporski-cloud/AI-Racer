@@ -29,7 +29,7 @@ export function drawCar(ctx: CanvasRenderingContext2D, car: Car, highlighted = f
   ctx.fillStyle = "rgba(0, 0, 0, 0.55)";
   ctx.fillRect(2, -halfWidth + 3, 5, CAR_WIDTH - 6);
   // white outline for the car we are watching
-  
+
   if (highlighted) {
     ctx.strokeStyle = "#ffffff";
     ctx.lineWidth = 2;

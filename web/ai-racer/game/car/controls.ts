@@ -21,7 +21,7 @@ const RIGHT_KEYS = ["ArrowRight", "KeyD"];
 export function listenToKeyboard(onPress: (key: string) => void): Keyboard {
   const pressed = new Set<string>(); // keys held down right now
 
-   function onKeyDown(event: KeyboardEvent) {
+  function onKeyDown(event: KeyboardEvent) {
     if (event.code === "Space" || event.code.startsWith("Arrow")) event.preventDefault(); // no page scrolling
     if (!event.repeat) onPress(event.code); // a single press, e.g. Space or M
     pressed.add(event.code);

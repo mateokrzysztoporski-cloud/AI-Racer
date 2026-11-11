@@ -13,7 +13,6 @@ function side(a: Point, b: Point, p: Point): number {
   return (b.x - a.x) * (p.y - a.y) - (b.y - a.y) * (p.x - a.x);
 }
 
-
 // how far along line a-b it crosses line c-d: 0 = at a, 1 = at b, null = no crossing
 export function crossingAt(a: Point, b: Point, c: Point, d: Point): number | null {
   const rx = b.x - a.x;

@@ -96,7 +96,6 @@ export function drawInputs(ctx: CanvasRenderingContext2D, names: string[], input
   });
 }
 
-
 // Training info (right side, under the lap timer)
 
 export type TrainingInfo = {

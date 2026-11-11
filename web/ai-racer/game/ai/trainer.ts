@@ -120,7 +120,7 @@ function createRacer(brain: Brain, track: Track): Racer {
 }
 
 function startNextGeneration(trainer: Trainer, track: Track) {
-   // save this generation's numbers for the chart
+  // save this generation's numbers for the chart
   trainer.history.push(
     measureGeneration(trainer.generation, trainer.racers, track.checkpoints.length, trainer.time),
   );
