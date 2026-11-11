@@ -2,6 +2,8 @@
 
 **100 cars learn to race a Formula 1 track from scratch, using a neural network and evolution, right in the browser.**
 
+**[▶ Watch it live](https://ai-racer-eight.vercel.app)**: the trained AI starts driving right away. Press N to watch it learn from zero.
+
 No machine learning libraries: the neural network, the genetic algorithm, the physics and the
 collision detection are written from scratch in TypeScript, so every number the AI learns can be explained.
 
