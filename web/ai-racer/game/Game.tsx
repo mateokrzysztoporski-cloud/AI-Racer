@@ -27,8 +27,8 @@ const SPEEDS = [1, 2, 5, 10, 1000];
 const SPEED_NAMES = ["1x", "2x", "5x", "10x", "max"];
 const PHYSICS_BUDGET = 12; // ms of physics per frame at most, so the page stays smooth
 
-// canvas pixels per world pixel at most, so a very big screen doesn't slow the game down
-const MAX_SCALE = 3;
+// canvas pixels per world pixel at most: 2 = 3200 x 1800, so big sharp screens don't slow training down
+const MAX_SCALE = 2;
 
 export default function Game() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
