@@ -49,6 +49,31 @@ export function describeGeneration(stats: GenerationStats): string {
   );
 }
 
+// the history as a CSV table (opens in Excel / Google Sheets), one row per generation
+export function historyToCsv(history: GenerationStats[]): string {
+  const header = [
+    "generation",
+    "best_laps",
+    "top10_laps",
+    "average_laps",
+    "cars_with_full_lap",
+    "best_lap_seconds",
+    "duration_seconds",
+  ].join(",");
+  const rows = history.map((row) =>
+    [
+      row.generation,
+      row.bestProgress.toFixed(3),
+      row.topTenProgress.toFixed(3),
+      row.averageProgress.toFixed(3),
+      row.fullLaps,
+      row.bestLap === null ? "" : (row.bestLap / 1000).toFixed(3),
+      row.duration.toFixed(1),
+    ].join(","),
+  );
+  return [header, ...rows].join("\n");
+}
+
 // Helpers
 
 function average(values: number[]): number {
