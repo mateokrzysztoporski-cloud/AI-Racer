@@ -149,7 +149,7 @@ export function drawTrainingInfo(ctx: CanvasRenderingContext2D, info: TrainingIn
   ctx.textAlign = "left";
   ctx.fillText("1-5 speed   M drive", left, y + height - 52);
   ctx.fillText(`H ${info.hideCrashed ? "show" : "hide"} crashed cars`, left, y + height - 38);
-  ctx.fillText("G chart   P save png", left, y + height - 24);
+  ctx.fillText("G chart P png C csv", left, y + height - 24);
   ctx.fillText("B save L load N new", left, y + height - 10);
 }
 

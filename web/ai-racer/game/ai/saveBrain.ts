@@ -1,7 +1,7 @@
 // Save brain: keeps the best trained brain in the browser and as a .json file, and loads it back.
 
 import { countWeights } from "./brain";
-import type { GenerationStats } from "./stats";
+import { historyToCsv, type GenerationStats } from "./stats";
 import type { Trainer } from "./trainer";
 
 // Types
@@ -48,14 +48,14 @@ export function saveToBrowser(saved: SavedTraining) {
 
 // downloads it as a .json file, e.g. to keep it in the repo's ai/ folder
 export function downloadTraining(saved: SavedTraining) {
-  const file = new Blob([JSON.stringify(saved, null, 2)], { type: "application/json" });
-  const url = URL.createObjectURL(file);
-  const link = document.createElement("a");
-  link.download = `ai-racer-brain-gen-${saved.generation}.json`;
-  link.href = url;
-  link.click();
-  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  downloadFile(`ai-racer-brain-gen-${saved.generation}.json`, JSON.stringify(saved, null, 2), "application/json");
 }
+
+// downloads the generation history as a .csv table (Excel / Google Sheets)
+export function downloadHistoryCsv(history: GenerationStats[]) {
+  downloadFile(`ai-racer-history-gen-${history.length}.csv`, historyToCsv(history), "text/csv");
+}
+
 
 // Loading
 
@@ -100,4 +100,17 @@ export function parseTraining(text: string, layers: number[]): SavedTraining | n
   } catch {
     return null; // not a valid .json file
   }
+}
+
+
+// Helpers
+
+// makes the browser download a text file
+function downloadFile(fileName: string, text: string, type: string) {
+  const url = URL.createObjectURL(new Blob([text], { type }));
+  const link = document.createElement("a");
+  link.download = fileName;
+  link.href = url;
+  link.click();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
 }

@@ -4,7 +4,7 @@
 
 import { useEffect, useRef } from "react";
 import { drawChart, saveChartImage } from "@/game/ai/drawChart";
-import { downloadTraining, forgetBrowserSave, loadFromBrowser, pickTrainingFile, saveToBrowser, trainingToSave } from "@/game/ai/saveBrain";
+import { downloadHistoryCsv, downloadTraining, forgetBrowserSave, loadFromBrowser, pickTrainingFile, saveToBrowser, trainingToSave } from "@/game/ai/saveBrain";
 import { describeGeneration } from "@/game/ai/stats";
 import { createTrainer, LAYERS, leader, MAX_TIME, POPULATION, restoreTrainer, updateTrainer } from "@/game/ai/trainer";
 import { createCar, updateCar, type Car } from "@/game/car/car";
@@ -71,7 +71,7 @@ export default function Game() {
     let logged = trainer.history.length; // generations already written to the browser console
 
     // Space = new car, M = drive / train, 1-5 = speed, H = hide crashed, G = chart,
-    // P = save chart, B = download brain, L = load brain, N = new training
+    // P = save chart, B = download brain, L = load brain, N = new training, C = download history CSV
     const keyboard = listenToKeyboard((key) => {
       if (key === "Space" && mode === "drive") cars = [createCar(track.start)];
       if (key === "KeyM") mode = mode === "drive" ? "train" : "drive";
@@ -96,6 +96,13 @@ export default function Game() {
           notify(`loaded brain from generation ${loaded.generation}`);
         });
       }
+
+      if (key === "KeyC") {
+        const hasHistory = trainer.history.length > 0;
+        if (hasHistory) downloadHistoryCsv(trainer.history);
+        notify(hasHistory ? "history downloaded (.csv)" : "no history yet, wait 1 generation");
+      }
+      
       if (key === "KeyN") {
         Object.assign(trainer, createTrainer(track));
         forgetBrowserSave();
