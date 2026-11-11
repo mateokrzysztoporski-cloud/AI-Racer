@@ -4,7 +4,7 @@
 
 import { useEffect, useRef } from "react";
 import { drawChart, saveChartImage } from "@/game/ai/drawChart";
-import { downloadHistoryCsv, downloadTraining, forgetBrowserSave, loadFromBrowser, pickTrainingFile, saveToBrowser, trainingToSave } from "@/game/ai/saveBrain";
+import { downloadHistoryCsv, downloadTraining, forgetBrowserSave, loadDemoBrain, loadFromBrowser, pickTrainingFile, saveToBrowser, trainingToSave } from "@/game/ai/saveBrain";
 import { describeGeneration } from "@/game/ai/stats";
 import { createTrainer, LAYERS, leader, MAX_TIME, POPULATION, restoreTrainer, updateTrainer } from "@/game/ai/trainer";
 import { createCar, updateCar, type Car } from "@/game/car/car";
@@ -59,9 +59,9 @@ export default function Game() {
     // short message on the right, e.g. "brain downloaded"
     let notice = saved ? `continuing from generation ${saved.generation}` : "";
     let noticeUntil = saved ? performance.now() + 4000 : 0; // 0 = nothing to show
-    const notify = (text: string) => {
+    const notify = (text: string, seconds = 2.5) => {
       notice = text;
-      noticeUntil = performance.now() + 2500;
+      noticeUntil = performance.now() + seconds * 1000;
     };
     let mode: "drive" | "train" = "drive";
     let speedIndex = 0; // which of SPEEDS, keys 1 to 5
@@ -70,8 +70,25 @@ export default function Game() {
     let showChart = true; // G shows / hides the progress chart
     let logged = trainer.history.length; // generations already written to the browser console
 
+    // demo: the trained brain from generation 174 drives, so visitors don't see random cars first
+    function startDemo() {
+      loadDemoBrain(LAYERS).then((demo) => {
+        if (!demo) {
+          notify("trained AI not found");
+          return;
+        }
+        restoreTrainer(trainer, demo, track);
+        savedGenerations = trainer.history.length;
+        logged = trainer.history.length;
+        mode = "train";
+        notify(`trained AI from generation ${demo.generation}, N = start from zero`, 8);
+      });
+    }
+    if (!saved) startDemo(); // first visit: no training saved in this browser yet
+
     // Space = new car, M = drive / train, 1-5 = speed, H = hide crashed, G = chart,
     // P = save chart, B = download brain, L = load brain, N = new training, C = download history CSV
+    // T = trained AI from generation 174
     const keyboard = listenToKeyboard((key) => {
       if (key === "Space" && mode === "drive") cars = [createCar(track.start)];
       if (key === "KeyM") mode = mode === "drive" ? "train" : "drive";
@@ -103,6 +120,7 @@ export default function Game() {
         notify(hasHistory ? "history downloaded (.csv)" : "no history yet, wait 1 generation");
       }
       
+      if (key === "KeyT") startDemo();
       if (key === "KeyN") {
         Object.assign(trainer, createTrainer(track));
         forgetBrowserSave();
@@ -205,7 +223,7 @@ export default function Game() {
         drawHint(ctx, "M = AI training");
       }
       // short message, e.g. after saving or loading
-      if (performance.now() < noticeUntil) drawHint(ctx, notice, mode === "train" ? 412 : 240);
+      if (performance.now() < noticeUntil) drawHint(ctx, notice, mode === "train" ? 426 : 240);
       frameId = requestAnimationFrame(frame);
     };
 
