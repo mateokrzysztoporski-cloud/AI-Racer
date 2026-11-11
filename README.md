@@ -241,7 +241,7 @@ never the physics itself.
 
 ```bash
 cd web/ai-racer
-pnpm install   # first time only
+pnpm install   # after cloning, and when dependencies change
 pnpm dev
 ```
 
@@ -277,7 +277,7 @@ AI-Racer/
     └── ai-racer/                   # the game (Next.js 16)
         ├── app/
         │   ├── page.tsx            # home page, shows the game full window
-        │   └── layout.tsx          # page title and fonts
+        │   └── layout.tsx          # page title
         └── game/
             ├── Game.tsx            # game loop, keys, drawing
             ├── geometry.ts         # line crossing math (crashes, checkpoints, sensors)
