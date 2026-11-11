@@ -5,7 +5,7 @@ import { buildWallGrid, type WallGrid } from "./wallGrid";
 
 export type Point = { x: number; y: number };
 
-// line from a to b 
+// line from a to b
 export type Segment = { a: Point; b: Point };
 
 // where the car starts and which way it faces
@@ -15,24 +15,24 @@ export type Track = {
   center: Point[]; // middle of the road
   left: Point[]; // left edge
   right: Point[]; // right edge
-  walls: Segment[]; // both edges 
+  walls: Segment[]; // both edges
   grid: WallGrid; // walls sorted into squares, for fast lookups
   checkpoints: Segment[]; // lines across the road in driving order,
   start: StartPosition; // car start spot behind the line
   width: number;
 };
 
-// Settings 
+// Settings
 
 export const WORLD_WIDTH = 1600;
 export const WORLD_HEIGHT = 900;
 
 const ROAD_WIDTH = 70;
-const SMOOTHING_ROUNDS = 4; 
-const CHECKPOINT_SPACING = 80; 
-const START_BEHIND_LINE = 50; 
+const SMOOTHING_ROUNDS = 4;
+const CHECKPOINT_SPACING = 80;
+const START_BEHIND_LINE = 50;
 
-// Track structure 
+// Track structure
 
 const CONTROL_POINTS: Point[] = [
   { x: 1367, y: 840 }, // start/finish straight
@@ -40,7 +40,7 @@ const CONTROL_POINTS: Point[] = [
   { x: 505, y: 837 },
   { x: 428, y: 804 }, // turn 1
   { x: 387, y: 719 },
-  { x: 332, y: 635 }, 
+  { x: 332, y: 635 },
   { x: 287, y: 495 },
   { x: 255, y: 369 },
   { x: 205, y: 256 },
@@ -109,14 +109,14 @@ const CONTROL_POINTS: Point[] = [
   { x: 1445, y: 840 },
 ];
 
-// Building the track 
+// Building the track
 
 export function buildTrack(): Track {
   const center = smoothLoop(CONTROL_POINTS, SMOOTHING_ROUNDS);
   const left = offsetLoop(center, ROAD_WIDTH / 2);
   const right = offsetLoop(center, -ROAD_WIDTH / 2);
 
-  // checkpoint 
+  // checkpoint
   const checkpoints: Segment[] = [];
   let travelled = CHECKPOINT_SPACING;
   for (let i = 0; i < center.length; i++) {
@@ -139,7 +139,7 @@ export function buildTrack(): Track {
   };
 }
 
-// go back from the start line 
+// go back from the start line
 function findStart(center: Point[], behind: number): StartPosition {
   let i = 0;
   let travelled = 0;
@@ -155,16 +155,16 @@ function findStart(center: Point[], behind: number): StartPosition {
   };
 }
 
-// Helpers 
+// Helpers
 
-// rounds the corners 
+// rounds the corners
 function smoothLoop(points: Point[], rounds: number): Point[] {
   let result = points;
   for (let round = 0; round < rounds; round++) {
     const next: Point[] = [];
     for (let i = 0; i < result.length; i++) {
       const a = result[i];
-      const b = result[(i + 1) % result.length]; 
+      const b = result[(i + 1) % result.length];
       next.push(between(a, b, 0.25), between(a, b, 0.75));
     }
     result = next;
@@ -172,18 +172,18 @@ function smoothLoop(points: Point[], rounds: number): Point[] {
   return result;
 }
 
-// moves every point sideways across the road 
+// moves every point sideways across the road
 function offsetLoop(points: Point[], distance: number): Point[] {
   return points.map((point, i) => {
     const before = points[(i - 1 + points.length) % points.length];
     const after = points[(i + 1) % points.length];
 
-    // road direction 
+    // road direction
     const dx = after.x - before.x;
     const dy = after.y - before.y;
     const length = Math.hypot(dx, dy);
 
-    // turned 90 degrees 
+    // turned 90 degrees
     const sideX = dy / length;
     const sideY = -dx / length;
 

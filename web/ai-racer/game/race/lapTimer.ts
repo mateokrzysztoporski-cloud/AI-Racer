@@ -2,7 +2,7 @@
 // All times in milliseconds
 
 export type LapTimer = {
-  lapStartedAt: number | null; 
+  lapStartedAt: number | null;
   lastLap: number | null;
   bestLap: number | null;
 };

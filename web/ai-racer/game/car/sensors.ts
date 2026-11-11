@@ -39,7 +39,7 @@ export const INPUT_NAMES = [
 export function readSensors(car: Car, track: Track): Sensor[] {
   const start = car.position;
 
-  // only walls close enough to be seen, the rest is skipped 
+  // only walls close enough to be seen, the rest is skipped
   const nearWalls = wallsNear(track.grid, start, SENSOR_RANGE);
 
   return SENSOR_DEGREES.map((degrees) => {

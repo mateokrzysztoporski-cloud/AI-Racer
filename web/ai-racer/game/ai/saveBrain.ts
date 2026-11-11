@@ -57,7 +57,6 @@ export function downloadHistoryCsv(history: GenerationStats[]) {
   downloadFile(`ai-racer-history-gen-${history.length}.csv`, historyToCsv(history), "text/csv");
 }
 
-
 // Loading
 
 // the save from this browser, if there is one that fits these layers
@@ -112,7 +111,6 @@ export function parseTraining(text: string, layers: number[]): SavedTraining | n
     return null; // not a valid .json file
   }
 }
-
 
 // Helpers
 
