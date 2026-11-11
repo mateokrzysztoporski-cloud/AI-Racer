@@ -27,6 +27,9 @@ const SPEEDS = [1, 2, 5, 10, 1000];
 const SPEED_NAMES = ["1x", "2x", "5x", "10x", "max"];
 const PHYSICS_BUDGET = 12; // ms of physics per frame at most, so the page stays smooth
 
+// canvas pixels per world pixel at most, so a very big screen doesn't slow the game down
+const MAX_SCALE = 3;
+
 export default function Game() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -36,15 +39,18 @@ export default function Game() {
     const ctx = canvas?.getContext("2d");
     if (!canvas || !ctx) return;
 
-    // sharp lines on screens
-    const pixelRatio = window.devicePixelRatio || 1;
-    canvas.width = WORLD_WIDTH * pixelRatio;
-    canvas.height = WORLD_HEIGHT * pixelRatio;
-    ctx.scale(pixelRatio, pixelRatio);
-
-        // track is drawn once, then pasted every frame
     const track = buildTrack();
-    const background = drawBackground(track, pixelRatio);
+
+    // sharp lines on every screen: the canvas gets as many pixels as it is shown with.
+    // The track is drawn once on a hidden canvas of that size, then pasted every frame.
+    // After a resize, a zoom or a move to another screen, both are made again.
+    let background = fitCanvas(canvas, ctx, track);
+    let pixelRatio = window.devicePixelRatio; // the pixel ratio the canvas was made for
+    let sizeChanged = false;
+    const resizeWatcher = new ResizeObserver(() => {
+      sizeChanged = true;
+    });
+    resizeWatcher.observe(canvas);
 
     let cars: Car[] = [createCar(track.start)];
 
@@ -119,7 +125,7 @@ export default function Game() {
         if (hasHistory) downloadHistoryCsv(trainer.history);
         notify(hasHistory ? "history downloaded (.csv)" : "no history yet, wait 1 generation");
       }
-      
+
       if (key === "KeyT") startDemo();
       if (key === "KeyN") {
         Object.assign(trainer, createTrainer(track));
@@ -138,8 +144,7 @@ export default function Game() {
     let leftover = 0; // time not simulated yet TBD
 
     const frame = (now: number) => {
-     
-          // physics in fixed steps, more of them when training is sped up
+      // physics in fixed steps, more of them when training is sped up
       const frameTime = Math.min((now - lastTime) / 1000, 0.1);
       lastTime = now;
       const speed = mode === "train" ? SPEEDS[speedIndex] : 1;
@@ -176,7 +181,12 @@ export default function Game() {
         const toSave = trainingToSave(trainer);
         if (toSave) saveToBrowser(toSave);
       }
-      // draw
+      // draw (the size is only changed here, right before drawing, so the canvas never shows up empty)
+      if (sizeChanged || window.devicePixelRatio !== pixelRatio) {
+        sizeChanged = false;
+        pixelRatio = window.devicePixelRatio;
+        background = fitCanvas(canvas, ctx, track);
+      }
       ctx.drawImage(background, 0, 0, WORLD_WIDTH, WORLD_HEIGHT);
 
       // in training: all 100 AI cars, and we watch the leader
@@ -218,7 +228,7 @@ export default function Game() {
           bestLapGeneration: trainer.bestLapGeneration,
           hideCrashed,
         });
-      if (showChart) drawChart(ctx, trainer.history);
+        if (showChart) drawChart(ctx, trainer.history);
       } else {
         drawHint(ctx, "M = AI training");
       }
@@ -233,32 +243,48 @@ export default function Game() {
     return () => {
       cancelAnimationFrame(frameId);
       keyboard.stop();
+      resizeWatcher.disconnect();
     };
   }, []);
 
-  // fill the window 16:9
+  // fill the window 16:9, the height follows the width
   const size = `min(100%, calc(100dvh * ${WORLD_WIDTH} / ${WORLD_HEIGHT}))`;
+  const aspectRatio = `${WORLD_WIDTH} / ${WORLD_HEIGHT}`;
 
   return (
     <canvas
       ref={canvasRef}
       width={WORLD_WIDTH}
       height={WORLD_HEIGHT}
-      style={{ width: size }}
+      style={{ width: size, aspectRatio }}
+      role="img"
+      aria-label="AI Racer: cars driving around a race track"
     />
   );
 }
 
 // Helpers
 
-// draws the track once on a hidden canvas
-function drawBackground(track: Track, pixelRatio: number): HTMLCanvasElement {
+// gives the canvas as many pixels as it has on the screen, returns the track drawn at that size
+function fitCanvas(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D, track: Track): HTMLCanvasElement {
+  const shownWidth = canvas.getBoundingClientRect().width; // in CSS pixels
+  const pixelRatio = window.devicePixelRatio || 1; // screen pixels per CSS pixel
+  const scale = Math.min((shownWidth * pixelRatio) / WORLD_WIDTH, MAX_SCALE) || 1; // 0 = not on screen yet
+  canvas.width = Math.max(Math.round(WORLD_WIDTH * scale), 1);
+  canvas.height = Math.max(Math.round(WORLD_HEIGHT * scale), 1);
+  // everything is still drawn in world pixels (1600 x 900), the canvas scales it
+  ctx.setTransform(canvas.width / WORLD_WIDTH, 0, 0, canvas.height / WORLD_HEIGHT, 0, 0);
+  return drawBackground(track, canvas.width, canvas.height);
+}
+
+// draws the track once on a hidden canvas with the same number of pixels
+function drawBackground(track: Track, width: number, height: number): HTMLCanvasElement {
   const background = document.createElement("canvas");
-  background.width = WORLD_WIDTH * pixelRatio;
-  background.height = WORLD_HEIGHT * pixelRatio;
+  background.width = width;
+  background.height = height;
   const ctx = background.getContext("2d");
   if (ctx) {
-    ctx.scale(pixelRatio, pixelRatio);
+    ctx.setTransform(width / WORLD_WIDTH, 0, 0, height / WORLD_HEIGHT, 0, 0);
     drawTrack(ctx, track);
   }
   return background;
