@@ -79,7 +79,7 @@ export default function Game() {
     let showChart = true; // G shows / hides the progress chart
     let logged = trainer.history.length; // generations already written to the browser console
 
-    // demo: the trained brain from generation 174 drives, so visitors don't see random cars first
+    // demo: the trained brain from generation 230 drives, so visitors don't see random cars first
     function startDemo() {
       loadDemoBrain(LAYERS).then((demo) => {
         if (!demo) {
@@ -97,7 +97,7 @@ export default function Game() {
 
     // Space = new car, M = drive / train, 1-5 = speed, H = hide crashed, G = chart,
     // P = save chart, B = download brain, L = load brain, N = new training, C = download history CSV
-    // T = trained AI from generation 174
+    // T = trained AI from generation 230
     const keyboard = listenToKeyboard((key) => {
       if (key === "Space" && mode === "drive") cars = [createCar(track.start)];
       if (key === "KeyM") mode = mode === "drive" ? "train" : "drive";

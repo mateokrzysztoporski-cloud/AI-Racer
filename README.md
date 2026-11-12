@@ -105,7 +105,8 @@ One training run, 174 generations (2.5 hours of simulated racing), exported with
 | **173** | **best lap 12.067 s** |
 | 174 | 77 of 100 cars finish a lap |
 
-The saved brains from generation **27**, **69** and **174** are in [`ai/results/`](ai/results).
+The saved brains from generation **27**, **69** and **174** are in [`ai/results/`](ai/results), together with
+generation **230**: the same run trained further, which drives a **12.000 s** lap and is the trained AI on the website.
 Load one with the `L` key to watch that exact driver: a brain always drives the same way,
 because the physics is deterministic.
 
@@ -300,7 +301,7 @@ pnpm install   # after cloning, and when dependencies change
 pnpm dev
 ```
 
-Open http://localhost:3000. The first visit shows the trained AI from generation 174: press **N** to train from zero, and **5** for maximum speed.
+Open http://localhost:3000. The first visit shows the trained AI from generation 230: press **N** to train from zero, and **5** for maximum speed.
 The first full laps usually appear after 20–40 generations.
 
 ### Controls
@@ -316,7 +317,7 @@ The first full laps usually appear after 20–40 generations.
 | B / L | download the best brain / load a brain file |
 | C | download the training history as CSV |
 | N | start a new training |
-| **T** | watch the trained AI from generation 174 (also shown on the first visit) |
+| **T** | watch the trained AI from generation 230 (also shown on the first visit) |
 
 Training is saved in the browser after every generation, so it continues after a reload.
 

@@ -20,7 +20,7 @@ export type SavedTraining = {
 // Settings
 
 const STORAGE_KEY = "ai-racer-training"; // name of the save in the browser
-const DEMO_FILE = "/ai-racer-brain-gen-174.json"; // trained brain for visitors, in public/
+const DEMO_FILE = "/ai-racer-brain-gen-230.json"; // trained brain for visitors, in public/
 
 // Saving
 

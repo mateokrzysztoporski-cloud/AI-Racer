@@ -1,0 +1,2226 @@
+{
+  "layers": [
+    8,
+    8,
+    6,
+    2
+  ],
+  "weights": [
+    1.5923486748291222,
+    -1.4501389487040364,
+    -0.6321428133680285,
+    -2.2501800736441866,
+    -1.3573934876372018,
+    -0.5798269703808888,
+    2.320967063245527,
+    -1.680341204505142,
+    -0.7887584111774202,
+    1.7458822405741832,
+    -2.1353280904676812,
+    -0.22768514668850526,
+    -1.2886632293906068,
+    1.3619535728893462,
+    -0.6275028598311234,
+    -0.39461667427784874,
+    -0.34007534785188365,
+    -1.436960643006277,
+    -0.41288567610329574,
+    0.5603103366974935,
+    3.2066357313965557,
+    0.5936663304032752,
+    1.3310841994645952,
+    1.3020654610139597,
+    -0.9441839119943036,
+    0.4790656675625593,
+    -2.399532486047619,
+    -0.25898370475583343,
+    0.08100963442787468,
+    -1.3180143614290034,
+    -0.6100001920816722,
+    1.0022007703638822,
+    -0.8486064064419767,
+    -0.36763472429888033,
+    0.039137790817865836,
+    0.17502551271560451,
+    -0.8188215940785847,
+    0.15412810831373913,
+    0.5409980167813985,
+    3.0435103399951835,
+    -0.37801806370046964,
+    -0.7666423585734683,
+    1.6787030263433165,
+    0.6584740291864312,
+    -0.2135069243076816,
+    -0.06119617596594473,
+    0.006398178887976336,
+    -1.6914473934020295,
+    -1.6460343121140086,
+    0.7031544781930237,
+    1.3014752841591315,
+    0.007607288388932432,
+    0.37520455200411973,
+    -0.7136242187634299,
+    -0.033607160967618954,
+    -0.5663794299655384,
+    -1.5340226664849335,
+    1.6375304256161034,
+    1.9295679028035846,
+    0.7572128463560216,
+    0.7770012956724226,
+    -0.841516898169551,
+    -1.041451014390858,
+    -0.846285000647648,
+    0.3889262112602626,
+    -0.9469681928355772,
+    -0.853825307507403,
+    -0.5487301635357302,
+    1.0287635738573335,
+    -0.6441870651461684,
+    1.413073283438847,
+    1.0633640774292221,
+    2.1553854930198297,
+    0.6949253937915153,
+    -1.7105892032341035,
+    0.9276487011808782,
+    -0.9851217163704725,
+    0.13789096115727173,
+    1.1327390919135714,
+    0.2916383718548927,
+    1.0462885446810275,
+    0.35510592983730205,
+    -0.5123244347858938,
+    0.30331368823028415,
+    0.6664294011722169,
+    1.5862248189594772,
+    -1.1751217116377626,
+    0.5281209956538063,
+    2.5162519936291883,
+    -1.966376433015193,
+    -0.1637009451119259,
+    -0.46686274949222417,
+    -0.2711055864836748,
+    0.49494546202931544,
+    -1.5752678468643535,
+    0.614911453206181,
+    -1.391620546768774,
+    -0.9854884390588794,
+    -0.2840480973821301,
+    -0.7442082525951244,
+    -1.1212613292870863,
+    -1.1019057398476453,
+    0.38115167437776887,
+    1.727769462358531,
+    1.015666869624185,
+    -1.4023880748155535,
+    -0.04483253796618092,
+    -1.2806478831966508,
+    -1.7427630439895263,
+    1.0676576878789272,
+    -1.5718862538263334,
+    -1.4441029355148918,
+    -1.932082628641545,
+    -0.2242746319547948,
+    -0.9473712030636315,
+    -2.233732087723639,
+    -0.3202113645099479,
+    0.5236280133661023,
+    1.6092325267170478,
+    -0.2479469415667127,
+    1.5877405350695626,
+    0.12137189565660478,
+    0.6979649198527687,
+    0.8951370678468435,
+    0.6095846394017062,
+    0.5902163458829218,
+    -0.9415837367669959,
+    0.07518769790470448,
+    2.587678254952177,
+    -0.9818916218683387,
+    0.24318729752678336,
+    -2.925588502672441,
+    1.6733338682561028,
+    -0.21536712708903183,
+    0.47242437531552695,
+    -0.08221766600891078,
+    0.7929557146422456,
+    -4.6038093016904,
+    0.953061937372635,
+    0.4497307963543097
+  ],
+  "generation": 230,
+  "bestLap": 11999.99999999932,
+  "bestLapGeneration": 211,
+  "history": [
+    {
+      "generation": 1,
+      "bestProgress": 0.05714285714285714,
+      "topTenProgress": 0.025714285714285717,
+      "averageProgress": 0.0032857142857142863,
+      "fullLaps": 0,
+      "bestLap": null,
+      "duration": 5.483333333333396
+    },
+    {
+      "generation": 2,
+      "bestProgress": 0.12857142857142856,
+      "topTenProgress": 0.07999999999999999,
+      "averageProgress": 0.013285714285714274,
+      "fullLaps": 0,
+      "bestLap": null,
+      "duration": 5.483333333333396
+    },
+    {
+      "generation": 3,
+      "bestProgress": 0.12857142857142856,
+      "topTenProgress": 0.08285714285714284,
+      "averageProgress": 0.014142857142857129,
+      "fullLaps": 0,
+      "bestLap": null,
+      "duration": 5.6500000000000705
+    },
+    {
+      "generation": 4,
+      "bestProgress": 0.2571428571428571,
+      "topTenProgress": 0.14857142857142858,
+      "averageProgress": 0.02214285714285713,
+      "fullLaps": 0,
+      "bestLap": null,
+      "duration": 8.53333333333349
+    },
+    {
+      "generation": 5,
+      "bestProgress": 0.2571428571428571,
+      "topTenProgress": 0.17285714285714288,
+      "averageProgress": 0.026285714285714263,
+      "fullLaps": 0,
+      "bestLap": null,
+      "duration": 5.000000000000038
+    },
+    {
+      "generation": 6,
+      "bestProgress": 0.2571428571428571,
+      "topTenProgress": 0.1842857142857143,
+      "averageProgress": 0.029285714285714252,
+      "fullLaps": 0,
+      "bestLap": null,
+      "duration": 6.483333333333445
+    },
+    {
+      "generation": 7,
+      "bestProgress": 0.2571428571428571,
+      "topTenProgress": 0.2214285714285714,
+      "averageProgress": 0.0421428571428571,
+      "fullLaps": 0,
+      "bestLap": null,
+      "duration": 14.516666666666483
+    },
+    {
+      "generation": 8,
+      "bestProgress": 0.2571428571428571,
+      "topTenProgress": 0.24142857142857146,
+      "averageProgress": 0.050714285714285684,
+      "fullLaps": 0,
+      "bestLap": null,
+      "duration": 14.516666666666483
+    },
+    {
+      "generation": 9,
+      "bestProgress": 0.2571428571428571,
+      "topTenProgress": 0.2571428571428571,
+      "averageProgress": 0.05228571428571424,
+      "fullLaps": 0,
+      "bestLap": null,
+      "duration": 8.06666666666685
+    },
+    {
+      "generation": 10,
+      "bestProgress": 0.2571428571428571,
+      "topTenProgress": 0.2571428571428571,
+      "averageProgress": 0.08028571428571424,
+      "fullLaps": 0,
+      "bestLap": null,
+      "duration": 7.950000000000185
+    },
+    {
+      "generation": 11,
+      "bestProgress": 0.2571428571428571,
+      "topTenProgress": 0.2571428571428571,
+      "averageProgress": 0.10071428571428565,
+      "fullLaps": 0,
+      "bestLap": null,
+      "duration": 7.950000000000185
+    },
+    {
+      "generation": 12,
+      "bestProgress": 0.2571428571428571,
+      "topTenProgress": 0.2571428571428571,
+      "averageProgress": 0.1305714285714284,
+      "fullLaps": 0,
+      "bestLap": null,
+      "duration": 7.950000000000185
+    },
+    {
+      "generation": 13,
+      "bestProgress": 0.2571428571428571,
+      "topTenProgress": 0.2571428571428571,
+      "averageProgress": 0.10371428571428563,
+      "fullLaps": 0,
+      "bestLap": null,
+      "duration": 11.708333333333309
+    },
+    {
+      "generation": 14,
+      "bestProgress": 0.2714285714285714,
+      "topTenProgress": 0.25857142857142856,
+      "averageProgress": 0.12171428571428557,
+      "fullLaps": 0,
+      "bestLap": null,
+      "duration": 9.958333333333409
+    },
+    {
+      "generation": 15,
+      "bestProgress": 0.2714285714285714,
+      "topTenProgress": 0.2614285714285714,
+      "averageProgress": 0.1137142857142856,
+      "fullLaps": 0,
+      "bestLap": null,
+      "duration": 9.958333333333409
+    },
+    {
+      "generation": 16,
+      "bestProgress": 0.2714285714285714,
+      "topTenProgress": 0.2614285714285714,
+      "averageProgress": 0.12714285714285695,
+      "fullLaps": 0,
+      "bestLap": null,
+      "duration": 9.958333333333409
+    },
+    {
+      "generation": 17,
+      "bestProgress": 0.2714285714285714,
+      "topTenProgress": 0.2614285714285714,
+      "averageProgress": 0.12128571428571412,
+      "fullLaps": 0,
+      "bestLap": null,
+      "duration": 9.958333333333409
+    },
+    {
+      "generation": 18,
+      "bestProgress": 0.2714285714285714,
+      "topTenProgress": 0.2657142857142857,
+      "averageProgress": 0.12599999999999983,
+      "fullLaps": 0,
+      "bestLap": null,
+      "duration": 13.249999999999888
+    },
+    {
+      "generation": 19,
+      "bestProgress": 0.45714285714285713,
+      "topTenProgress": 0.3042857142857142,
+      "averageProgress": 0.12185714285714272,
+      "fullLaps": 0,
+      "bestLap": null,
+      "duration": 16.316666666666382
+    },
+    {
+      "generation": 20,
+      "bestProgress": 0.45714285714285713,
+      "topTenProgress": 0.3042857142857142,
+      "averageProgress": 0.14085714285714265,
+      "fullLaps": 0,
+      "bestLap": null,
+      "duration": 16.316666666666382
+    },
+    {
+      "generation": 21,
+      "bestProgress": 0.45714285714285713,
+      "topTenProgress": 0.33999999999999997,
+      "averageProgress": 0.14857142857142833,
+      "fullLaps": 0,
+      "bestLap": null,
+      "duration": 16.316666666666382
+    },
+    {
+      "generation": 22,
+      "bestProgress": 0.45714285714285713,
+      "topTenProgress": 0.35857142857142854,
+      "averageProgress": 0.1497142857142855,
+      "fullLaps": 0,
+      "bestLap": null,
+      "duration": 21.016666666666115
+    },
+    {
+      "generation": 23,
+      "bestProgress": 0.5,
+      "topTenProgress": 0.43428571428571433,
+      "averageProgress": 0.18999999999999986,
+      "fullLaps": 0,
+      "bestLap": null,
+      "duration": 20.149999999999498
+    },
+    {
+      "generation": 24,
+      "bestProgress": 0.5,
+      "topTenProgress": 0.4600000000000001,
+      "averageProgress": 0.19299999999999978,
+      "fullLaps": 0,
+      "bestLap": null,
+      "duration": 31.908333333332163
+    },
+    {
+      "generation": 25,
+      "bestProgress": 0.5142857142857142,
+      "topTenProgress": 0.49000000000000005,
+      "averageProgress": 0.17742857142857144,
+      "fullLaps": 0,
+      "bestLap": null,
+      "duration": 58.88333333333063
+    },
+    {
+      "generation": 26,
+      "bestProgress": 0.5285714285714286,
+      "topTenProgress": 0.49714285714285716,
+      "averageProgress": 0.18100000000000008,
+      "fullLaps": 0,
+      "bestLap": null,
+      "duration": 58.88333333333063
+    },
+    {
+      "generation": 27,
+      "bestProgress": 3.5,
+      "topTenProgress": 1.0328571428571427,
+      "averageProgress": 0.25742857142857145,
+      "fullLaps": 2,
+      "bestLap": 17166.66666666569,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 28,
+      "bestProgress": 3.7,
+      "topTenProgress": 3.598571428571428,
+      "averageProgress": 1.630428571428572,
+      "fullLaps": 49,
+      "bestLap": 15949.999999999098,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 29,
+      "bestProgress": 3.942857142857143,
+      "topTenProgress": 3.677142857142857,
+      "averageProgress": 1.5428571428571423,
+      "fullLaps": 45,
+      "bestLap": 14999.99999999915,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 30,
+      "bestProgress": 3.9714285714285715,
+      "topTenProgress": 3.7299999999999995,
+      "averageProgress": 1.3655714285714289,
+      "fullLaps": 39,
+      "bestLap": 14933.333333332488,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 31,
+      "bestProgress": 3.9714285714285715,
+      "topTenProgress": 3.6514285714285712,
+      "averageProgress": 1.139142857142856,
+      "fullLaps": 30,
+      "bestLap": 14933.333333332488,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 32,
+      "bestProgress": 3.9714285714285715,
+      "topTenProgress": 3.7028571428571433,
+      "averageProgress": 0.9667142857142845,
+      "fullLaps": 25,
+      "bestLap": 14933.333333332488,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 33,
+      "bestProgress": 3.9714285714285715,
+      "topTenProgress": 3.7685714285714282,
+      "averageProgress": 1.2404285714285697,
+      "fullLaps": 34,
+      "bestLap": 14933.333333332488,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 34,
+      "bestProgress": 3.9714285714285715,
+      "topTenProgress": 3.84,
+      "averageProgress": 1.291142857142855,
+      "fullLaps": 34,
+      "bestLap": 14933.333333332488,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 35,
+      "bestProgress": 4.1571428571428575,
+      "topTenProgress": 3.9085714285714284,
+      "averageProgress": 1.3794285714285714,
+      "fullLaps": 37,
+      "bestLap": 14433.333333332514,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 36,
+      "bestProgress": 4.1571428571428575,
+      "topTenProgress": 3.958571428571429,
+      "averageProgress": 1.5641428571428602,
+      "fullLaps": 42,
+      "bestLap": 14399.999999999181,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 37,
+      "bestProgress": 4.242857142857143,
+      "topTenProgress": 4.0685714285714285,
+      "averageProgress": 1.554142857142859,
+      "fullLaps": 41,
+      "bestLap": 14199.999999999192,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 38,
+      "bestProgress": 4.3,
+      "topTenProgress": 4.174285714285714,
+      "averageProgress": 1.4315714285714316,
+      "fullLaps": 36,
+      "bestLap": 13899.999999999207,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 39,
+      "bestProgress": 4.385714285714286,
+      "topTenProgress": 4.248571428571429,
+      "averageProgress": 1.5600000000000025,
+      "fullLaps": 38,
+      "bestLap": 13599.999999999221,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 40,
+      "bestProgress": 4.385714285714286,
+      "topTenProgress": 4.25,
+      "averageProgress": 1.6625714285714313,
+      "fullLaps": 42,
+      "bestLap": 13599.999999999221,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 41,
+      "bestProgress": 4.385714285714286,
+      "topTenProgress": 4.271428571428571,
+      "averageProgress": 1.56414285714286,
+      "fullLaps": 37,
+      "bestLap": 13599.999999999221,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 42,
+      "bestProgress": 4.385714285714286,
+      "topTenProgress": 4.282857142857144,
+      "averageProgress": 1.556857142857146,
+      "fullLaps": 37,
+      "bestLap": 13599.999999999221,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 43,
+      "bestProgress": 4.385714285714286,
+      "topTenProgress": 4.28,
+      "averageProgress": 1.4820000000000044,
+      "fullLaps": 34,
+      "bestLap": 13599.999999999221,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 44,
+      "bestProgress": 4.428571428571429,
+      "topTenProgress": 4.332857142857143,
+      "averageProgress": 1.7245714285714318,
+      "fullLaps": 42,
+      "bestLap": 13499.999999999236,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 45,
+      "bestProgress": 4.514285714285714,
+      "topTenProgress": 4.377142857142857,
+      "averageProgress": 1.4112857142857178,
+      "fullLaps": 32,
+      "bestLap": 13199.999999999243,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 46,
+      "bestProgress": 4.514285714285714,
+      "topTenProgress": 4.4157142857142855,
+      "averageProgress": 1.9277142857142888,
+      "fullLaps": 46,
+      "bestLap": 13199.999999999243,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 47,
+      "bestProgress": 4.514285714285714,
+      "topTenProgress": 4.425714285714286,
+      "averageProgress": 1.729857142857146,
+      "fullLaps": 42,
+      "bestLap": 13199.999999999243,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 48,
+      "bestProgress": 4.514285714285714,
+      "topTenProgress": 4.418571428571427,
+      "averageProgress": 1.5744285714285746,
+      "fullLaps": 36,
+      "bestLap": 13199.999999999243,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 49,
+      "bestProgress": 4.514285714285714,
+      "topTenProgress": 4.427142857142857,
+      "averageProgress": 1.3109999999999997,
+      "fullLaps": 29,
+      "bestLap": 13199.999999999243,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 50,
+      "bestProgress": 4.5285714285714285,
+      "topTenProgress": 4.468571428571429,
+      "averageProgress": 1.6604285714285743,
+      "fullLaps": 37,
+      "bestLap": 13141.666666665926,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 51,
+      "bestProgress": 4.5285714285714285,
+      "topTenProgress": 4.471428571428571,
+      "averageProgress": 1.4172857142857171,
+      "fullLaps": 30,
+      "bestLap": 13141.666666665926,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 52,
+      "bestProgress": 4.5285714285714285,
+      "topTenProgress": 4.477142857142857,
+      "averageProgress": 1.966142857142858,
+      "fullLaps": 45,
+      "bestLap": 13141.666666665926,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 53,
+      "bestProgress": 4.5285714285714285,
+      "topTenProgress": 4.497142857142857,
+      "averageProgress": 1.6875714285714327,
+      "fullLaps": 39,
+      "bestLap": 12991.666666666546,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 54,
+      "bestProgress": 4.557142857142857,
+      "topTenProgress": 4.51,
+      "averageProgress": 2.0208571428571456,
+      "fullLaps": 44,
+      "bestLap": 12974.999999999258,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 55,
+      "bestProgress": 4.557142857142857,
+      "topTenProgress": 4.505714285714285,
+      "averageProgress": 2.178571428571431,
+      "fullLaps": 51,
+      "bestLap": 12974.999999999258,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 56,
+      "bestProgress": 4.571428571428571,
+      "topTenProgress": 4.542857142857143,
+      "averageProgress": 2.0608571428571456,
+      "fullLaps": 47,
+      "bestLap": 12933.333333332599,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 57,
+      "bestProgress": 4.571428571428571,
+      "topTenProgress": 4.545714285714285,
+      "averageProgress": 2.2245714285714318,
+      "fullLaps": 51,
+      "bestLap": 12933.333333332599,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 58,
+      "bestProgress": 4.571428571428571,
+      "topTenProgress": 4.547142857142857,
+      "averageProgress": 2.323428571428575,
+      "fullLaps": 52,
+      "bestLap": 12933.333333332594,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 59,
+      "bestProgress": 4.571428571428571,
+      "topTenProgress": 4.555714285714286,
+      "averageProgress": 2.3225714285714307,
+      "fullLaps": 52,
+      "bestLap": 12933.333333332594,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 60,
+      "bestProgress": 4.571428571428571,
+      "topTenProgress": 4.561428571428571,
+      "averageProgress": 2.402000000000003,
+      "fullLaps": 54,
+      "bestLap": 12899.999999999265,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 61,
+      "bestProgress": 4.585714285714285,
+      "topTenProgress": 4.574285714285713,
+      "averageProgress": 2.349285714285718,
+      "fullLaps": 52,
+      "bestLap": 12866.666666665935,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 62,
+      "bestProgress": 4.585714285714285,
+      "topTenProgress": 4.571428571428571,
+      "averageProgress": 2.1792857142857174,
+      "fullLaps": 48,
+      "bestLap": 12866.666666665935,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 63,
+      "bestProgress": 4.6,
+      "topTenProgress": 4.582857142857142,
+      "averageProgress": 2.3380000000000027,
+      "fullLaps": 51,
+      "bestLap": 12799.999999999272,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 64,
+      "bestProgress": 4.6571428571428575,
+      "topTenProgress": 4.598571428571428,
+      "averageProgress": 2.510857142857146,
+      "fullLaps": 54,
+      "bestLap": 12649.999999999283,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 65,
+      "bestProgress": 4.6571428571428575,
+      "topTenProgress": 4.612857142857143,
+      "averageProgress": 2.5055714285714314,
+      "fullLaps": 54,
+      "bestLap": 12649.999999999283,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 66,
+      "bestProgress": 4.6571428571428575,
+      "topTenProgress": 4.627142857142858,
+      "averageProgress": 1.9828571428571473,
+      "fullLaps": 42,
+      "bestLap": 12649.999999999283,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 67,
+      "bestProgress": 4.685714285714286,
+      "topTenProgress": 4.635714285714286,
+      "averageProgress": 1.8257142857142887,
+      "fullLaps": 41,
+      "bestLap": 12599.99999999928,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 68,
+      "bestProgress": 4.685714285714286,
+      "topTenProgress": 4.634285714285715,
+      "averageProgress": 2.289000000000003,
+      "fullLaps": 50,
+      "bestLap": 12599.99999999928,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 69,
+      "bestProgress": 4.685714285714286,
+      "topTenProgress": 4.647142857142858,
+      "averageProgress": 2.3737142857142888,
+      "fullLaps": 53,
+      "bestLap": 12599.99999999928,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 70,
+      "bestProgress": 4.685714285714286,
+      "topTenProgress": 4.63857142857143,
+      "averageProgress": 2.6087142857142904,
+      "fullLaps": 56,
+      "bestLap": 12599.99999999928,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 71,
+      "bestProgress": 4.685714285714286,
+      "topTenProgress": 4.654285714285715,
+      "averageProgress": 2.7052857142857154,
+      "fullLaps": 60,
+      "bestLap": 12599.99999999928,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 72,
+      "bestProgress": 4.685714285714286,
+      "topTenProgress": 4.652857142857144,
+      "averageProgress": 1.9458571428571465,
+      "fullLaps": 40,
+      "bestLap": 12599.99999999928,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 73,
+      "bestProgress": 4.685714285714286,
+      "topTenProgress": 4.65,
+      "averageProgress": 2.2724285714285752,
+      "fullLaps": 50,
+      "bestLap": 12599.99999999928,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 74,
+      "bestProgress": 4.7,
+      "topTenProgress": 4.66,
+      "averageProgress": 2.280857142857146,
+      "fullLaps": 48,
+      "bestLap": 12566.666666665951,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 75,
+      "bestProgress": 4.7,
+      "topTenProgress": 4.662857142857143,
+      "averageProgress": 2.4512857142857176,
+      "fullLaps": 54,
+      "bestLap": 12566.666666665951,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 76,
+      "bestProgress": 4.7,
+      "topTenProgress": 4.658571428571429,
+      "averageProgress": 2.0680000000000045,
+      "fullLaps": 47,
+      "bestLap": 12566.666666665951,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 77,
+      "bestProgress": 4.7,
+      "topTenProgress": 4.652857142857142,
+      "averageProgress": 2.027571428571433,
+      "fullLaps": 43,
+      "bestLap": 12566.666666665951,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 78,
+      "bestProgress": 4.7,
+      "topTenProgress": 4.665714285714286,
+      "averageProgress": 2.3734285714285748,
+      "fullLaps": 51,
+      "bestLap": 12566.666666665951,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 79,
+      "bestProgress": 4.7,
+      "topTenProgress": 4.661428571428571,
+      "averageProgress": 2.2992857142857175,
+      "fullLaps": 50,
+      "bestLap": 12566.666666665951,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 80,
+      "bestProgress": 4.7,
+      "topTenProgress": 4.677142857142857,
+      "averageProgress": 2.337000000000003,
+      "fullLaps": 51,
+      "bestLap": 12558.33333333262,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 81,
+      "bestProgress": 4.7,
+      "topTenProgress": 4.6657142857142855,
+      "averageProgress": 2.5071428571428602,
+      "fullLaps": 54,
+      "bestLap": 12558.333333332619,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 82,
+      "bestProgress": 4.7,
+      "topTenProgress": 4.677142857142857,
+      "averageProgress": 2.3224285714285746,
+      "fullLaps": 52,
+      "bestLap": 12558.33333333262,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 83,
+      "bestProgress": 4.7,
+      "topTenProgress": 4.677142857142858,
+      "averageProgress": 2.5181428571428603,
+      "fullLaps": 56,
+      "bestLap": 12558.33333333262,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 84,
+      "bestProgress": 4.7,
+      "topTenProgress": 4.678571428571429,
+      "averageProgress": 2.6094285714285737,
+      "fullLaps": 58,
+      "bestLap": 12558.33333333262,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 85,
+      "bestProgress": 4.7,
+      "topTenProgress": 4.680000000000001,
+      "averageProgress": 2.476285714285717,
+      "fullLaps": 53,
+      "bestLap": 12558.33333333262,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 86,
+      "bestProgress": 4.7,
+      "topTenProgress": 4.680000000000001,
+      "averageProgress": 1.9748571428571469,
+      "fullLaps": 41,
+      "bestLap": 12558.33333333262,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 87,
+      "bestProgress": 4.728571428571429,
+      "topTenProgress": 4.675714285714286,
+      "averageProgress": 2.3881428571428605,
+      "fullLaps": 50,
+      "bestLap": 12466.666666665958,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 88,
+      "bestProgress": 4.728571428571429,
+      "topTenProgress": 4.698571428571428,
+      "averageProgress": 2.7102857142857135,
+      "fullLaps": 58,
+      "bestLap": 12466.666666665958,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 89,
+      "bestProgress": 4.728571428571429,
+      "topTenProgress": 4.692857142857142,
+      "averageProgress": 2.339000000000003,
+      "fullLaps": 50,
+      "bestLap": 12466.666666665958,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 90,
+      "bestProgress": 4.728571428571429,
+      "topTenProgress": 4.701428571428571,
+      "averageProgress": 2.642714285714285,
+      "fullLaps": 56,
+      "bestLap": 12466.666666665958,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 91,
+      "bestProgress": 4.728571428571429,
+      "topTenProgress": 4.697142857142857,
+      "averageProgress": 2.7671428571428534,
+      "fullLaps": 59,
+      "bestLap": 12433.333333332628,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 92,
+      "bestProgress": 4.728571428571429,
+      "topTenProgress": 4.708571428571429,
+      "averageProgress": 2.3621428571428607,
+      "fullLaps": 50,
+      "bestLap": 12433.333333332628,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 93,
+      "bestProgress": 4.728571428571429,
+      "topTenProgress": 4.714285714285714,
+      "averageProgress": 2.683857142857139,
+      "fullLaps": 58,
+      "bestLap": 12433.333333332628,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 94,
+      "bestProgress": 4.728571428571429,
+      "topTenProgress": 4.714285714285714,
+      "averageProgress": 2.515857142857146,
+      "fullLaps": 54,
+      "bestLap": 12433.333333332628,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 95,
+      "bestProgress": 4.728571428571429,
+      "topTenProgress": 4.7214285714285715,
+      "averageProgress": 2.4684285714285745,
+      "fullLaps": 51,
+      "bestLap": 12433.333333332628,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 96,
+      "bestProgress": 4.728571428571429,
+      "topTenProgress": 4.717142857142857,
+      "averageProgress": 2.487571428571431,
+      "fullLaps": 53,
+      "bestLap": 12433.333333332628,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 97,
+      "bestProgress": 4.728571428571429,
+      "topTenProgress": 4.707142857142857,
+      "averageProgress": 2.2554285714285744,
+      "fullLaps": 47,
+      "bestLap": 12433.333333332628,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 98,
+      "bestProgress": 4.728571428571429,
+      "topTenProgress": 4.717142857142857,
+      "averageProgress": 2.332285714285718,
+      "fullLaps": 51,
+      "bestLap": 12433.333333332628,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 99,
+      "bestProgress": 4.771428571428571,
+      "topTenProgress": 4.727142857142857,
+      "averageProgress": 2.7608571428571405,
+      "fullLaps": 60,
+      "bestLap": 12374.999999999294,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 100,
+      "bestProgress": 4.771428571428571,
+      "topTenProgress": 4.738571428571428,
+      "averageProgress": 2.614571428571429,
+      "fullLaps": 55,
+      "bestLap": 12374.999999999294,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 101,
+      "bestProgress": 4.771428571428571,
+      "topTenProgress": 4.72,
+      "averageProgress": 1.9614285714285742,
+      "fullLaps": 40,
+      "bestLap": 12374.999999999294,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 102,
+      "bestProgress": 4.771428571428571,
+      "topTenProgress": 4.737142857142858,
+      "averageProgress": 2.777142857142853,
+      "fullLaps": 60,
+      "bestLap": 12374.999999999294,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 103,
+      "bestProgress": 4.771428571428571,
+      "topTenProgress": 4.748571428571429,
+      "averageProgress": 2.37614285714286,
+      "fullLaps": 50,
+      "bestLap": 12333.333333332634,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 104,
+      "bestProgress": 4.785714285714286,
+      "topTenProgress": 4.76,
+      "averageProgress": 2.6919999999999984,
+      "fullLaps": 57,
+      "bestLap": 12333.333333332634,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 105,
+      "bestProgress": 4.785714285714286,
+      "topTenProgress": 4.752857142857144,
+      "averageProgress": 2.278000000000003,
+      "fullLaps": 49,
+      "bestLap": 12333.333333332634,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 106,
+      "bestProgress": 4.785714285714286,
+      "topTenProgress": 4.747142857142857,
+      "averageProgress": 2.2650000000000023,
+      "fullLaps": 47,
+      "bestLap": 12358.333333332632,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 107,
+      "bestProgress": 4.785714285714286,
+      "topTenProgress": 4.772857142857143,
+      "averageProgress": 2.784714285714283,
+      "fullLaps": 60,
+      "bestLap": 12333.333333332634,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 108,
+      "bestProgress": 4.785714285714286,
+      "topTenProgress": 4.761428571428572,
+      "averageProgress": 2.1235714285714313,
+      "fullLaps": 44,
+      "bestLap": 12333.333333332634,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 109,
+      "bestProgress": 4.785714285714286,
+      "topTenProgress": 4.767142857142858,
+      "averageProgress": 2.485571428571431,
+      "fullLaps": 54,
+      "bestLap": 12333.333333332634,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 110,
+      "bestProgress": 4.785714285714286,
+      "topTenProgress": 4.775714285714286,
+      "averageProgress": 2.5411428571428596,
+      "fullLaps": 53,
+      "bestLap": 12324.999999999305,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 111,
+      "bestProgress": 4.814285714285714,
+      "topTenProgress": 4.774285714285714,
+      "averageProgress": 2.5902857142857156,
+      "fullLaps": 55,
+      "bestLap": 12299.999999999302,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 112,
+      "bestProgress": 4.814285714285714,
+      "topTenProgress": 4.772857142857143,
+      "averageProgress": 2.7517142857142805,
+      "fullLaps": 58,
+      "bestLap": 12299.999999999302,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 113,
+      "bestProgress": 4.814285714285714,
+      "topTenProgress": 4.784285714285714,
+      "averageProgress": 3.0164285714285666,
+      "fullLaps": 64,
+      "bestLap": 12299.999999999302,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 114,
+      "bestProgress": 4.814285714285714,
+      "topTenProgress": 4.785714285714286,
+      "averageProgress": 2.7151428571428537,
+      "fullLaps": 57,
+      "bestLap": 12299.999999999302,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 115,
+      "bestProgress": 4.814285714285714,
+      "topTenProgress": 4.784285714285714,
+      "averageProgress": 2.6572857142857136,
+      "fullLaps": 56,
+      "bestLap": 12299.999999999302,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 116,
+      "bestProgress": 4.814285714285714,
+      "topTenProgress": 4.795714285714285,
+      "averageProgress": 2.77528571428571,
+      "fullLaps": 59,
+      "bestLap": 12258.333333332639,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 117,
+      "bestProgress": 4.814285714285714,
+      "topTenProgress": 4.797142857142857,
+      "averageProgress": 3.04328571428571,
+      "fullLaps": 65,
+      "bestLap": 12258.333333332639,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 118,
+      "bestProgress": 4.814285714285714,
+      "topTenProgress": 4.794285714285715,
+      "averageProgress": 3.3702857142857083,
+      "fullLaps": 72,
+      "bestLap": 12258.333333332639,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 119,
+      "bestProgress": 4.814285714285714,
+      "topTenProgress": 4.790000000000001,
+      "averageProgress": 3.2127142857142803,
+      "fullLaps": 69,
+      "bestLap": 12258.333333332639,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 120,
+      "bestProgress": 4.828571428571428,
+      "topTenProgress": 4.8,
+      "averageProgress": 2.8627142857142833,
+      "fullLaps": 60,
+      "bestLap": 12258.333333332639,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 121,
+      "bestProgress": 4.828571428571428,
+      "topTenProgress": 4.79,
+      "averageProgress": 2.662428571428569,
+      "fullLaps": 56,
+      "bestLap": 12258.333333332639,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 122,
+      "bestProgress": 4.828571428571428,
+      "topTenProgress": 4.797142857142857,
+      "averageProgress": 2.844999999999995,
+      "fullLaps": 62,
+      "bestLap": 12258.333333332639,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 123,
+      "bestProgress": 4.828571428571428,
+      "topTenProgress": 4.789999999999999,
+      "averageProgress": 2.4188571428571453,
+      "fullLaps": 50,
+      "bestLap": 12258.333333332639,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 124,
+      "bestProgress": 4.828571428571428,
+      "topTenProgress": 4.804285714285713,
+      "averageProgress": 2.8662857142857097,
+      "fullLaps": 61,
+      "bestLap": 12258.333333332637,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 125,
+      "bestProgress": 4.828571428571428,
+      "topTenProgress": 4.801428571428572,
+      "averageProgress": 2.911714285714282,
+      "fullLaps": 63,
+      "bestLap": 12258.333333332637,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 126,
+      "bestProgress": 4.828571428571428,
+      "topTenProgress": 4.8114285714285705,
+      "averageProgress": 2.887571428571424,
+      "fullLaps": 60,
+      "bestLap": 12258.333333332637,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 127,
+      "bestProgress": 4.828571428571428,
+      "topTenProgress": 4.815714285714285,
+      "averageProgress": 3.0585714285714243,
+      "fullLaps": 64,
+      "bestLap": 12266.66666666597,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 128,
+      "bestProgress": 4.828571428571428,
+      "topTenProgress": 4.81,
+      "averageProgress": 2.884428571428568,
+      "fullLaps": 63,
+      "bestLap": 12258.333333332637,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 129,
+      "bestProgress": 4.8428571428571425,
+      "topTenProgress": 4.822857142857144,
+      "averageProgress": 3.210285714285711,
+      "fullLaps": 68,
+      "bestLap": 12224.999999999302,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 130,
+      "bestProgress": 4.8428571428571425,
+      "topTenProgress": 4.815714285714285,
+      "averageProgress": 2.9834285714285667,
+      "fullLaps": 63,
+      "bestLap": 12224.999999999302,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 131,
+      "bestProgress": 4.8428571428571425,
+      "topTenProgress": 4.815714285714285,
+      "averageProgress": 2.840714285714281,
+      "fullLaps": 60,
+      "bestLap": 12224.999999999302,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 132,
+      "bestProgress": 4.857142857142857,
+      "topTenProgress": 4.825714285714286,
+      "averageProgress": 3.2949999999999964,
+      "fullLaps": 71,
+      "bestLap": 12224.999999999302,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 133,
+      "bestProgress": 4.857142857142857,
+      "topTenProgress": 4.831428571428572,
+      "averageProgress": 2.803285714285709,
+      "fullLaps": 59,
+      "bestLap": 12224.999999999302,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 134,
+      "bestProgress": 4.857142857142857,
+      "topTenProgress": 4.835714285714285,
+      "averageProgress": 3.44771428571428,
+      "fullLaps": 74,
+      "bestLap": 12183.33333333264,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 135,
+      "bestProgress": 4.857142857142857,
+      "topTenProgress": 4.835714285714286,
+      "averageProgress": 2.865999999999993,
+      "fullLaps": 59,
+      "bestLap": 12183.33333333264,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 136,
+      "bestProgress": 4.857142857142857,
+      "topTenProgress": 4.8342857142857145,
+      "averageProgress": 3.123142857142854,
+      "fullLaps": 67,
+      "bestLap": 12183.33333333264,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 137,
+      "bestProgress": 4.885714285714286,
+      "topTenProgress": 4.847142857142857,
+      "averageProgress": 3.3471428571428543,
+      "fullLaps": 70,
+      "bestLap": 12124.999999999309,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 138,
+      "bestProgress": 4.885714285714286,
+      "topTenProgress": 4.848571428571429,
+      "averageProgress": 3.1919999999999953,
+      "fullLaps": 69,
+      "bestLap": 12124.999999999309,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 139,
+      "bestProgress": 4.885714285714286,
+      "topTenProgress": 4.852857142857143,
+      "averageProgress": 3.25971428571428,
+      "fullLaps": 68,
+      "bestLap": 12124.999999999309,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 140,
+      "bestProgress": 4.885714285714286,
+      "topTenProgress": 4.8500000000000005,
+      "averageProgress": 3.1077142857142803,
+      "fullLaps": 67,
+      "bestLap": 12124.999999999309,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 141,
+      "bestProgress": 4.885714285714286,
+      "topTenProgress": 4.857142857142857,
+      "averageProgress": 3.24271428571428,
+      "fullLaps": 68,
+      "bestLap": 12124.999999999309,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 142,
+      "bestProgress": 4.885714285714286,
+      "topTenProgress": 4.857142857142857,
+      "averageProgress": 3.3947142857142807,
+      "fullLaps": 72,
+      "bestLap": 12124.999999999309,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 143,
+      "bestProgress": 4.885714285714286,
+      "topTenProgress": 4.867142857142856,
+      "averageProgress": 3.352285714285708,
+      "fullLaps": 72,
+      "bestLap": 12124.999999999309,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 144,
+      "bestProgress": 4.885714285714286,
+      "topTenProgress": 4.862857142857142,
+      "averageProgress": 3.380571428571427,
+      "fullLaps": 73,
+      "bestLap": 12124.999999999309,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 145,
+      "bestProgress": 4.885714285714286,
+      "topTenProgress": 4.871428571428571,
+      "averageProgress": 2.8828571428571395,
+      "fullLaps": 59,
+      "bestLap": 12108.333333332645,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 146,
+      "bestProgress": 4.885714285714286,
+      "topTenProgress": 4.865714285714285,
+      "averageProgress": 3.275285714285711,
+      "fullLaps": 68,
+      "bestLap": 12124.999999999309,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 147,
+      "bestProgress": 4.885714285714286,
+      "topTenProgress": 4.874285714285714,
+      "averageProgress": 3.676428571428568,
+      "fullLaps": 77,
+      "bestLap": 12124.999999999309,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 148,
+      "bestProgress": 4.885714285714286,
+      "topTenProgress": 4.865714285714285,
+      "averageProgress": 3.239285714285712,
+      "fullLaps": 71,
+      "bestLap": 12124.999999999309,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 149,
+      "bestProgress": 4.885714285714286,
+      "topTenProgress": 4.869999999999999,
+      "averageProgress": 3.584428571428568,
+      "fullLaps": 74,
+      "bestLap": 12124.999999999309,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 150,
+      "bestProgress": 4.885714285714286,
+      "topTenProgress": 4.8671428571428565,
+      "averageProgress": 3.290142857142852,
+      "fullLaps": 70,
+      "bestLap": 12124.999999999309,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 151,
+      "bestProgress": 4.885714285714286,
+      "topTenProgress": 4.871428571428571,
+      "averageProgress": 3.4968571428571393,
+      "fullLaps": 74,
+      "bestLap": 12124.999999999309,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 152,
+      "bestProgress": 4.885714285714286,
+      "topTenProgress": 4.867142857142857,
+      "averageProgress": 3.049999999999992,
+      "fullLaps": 67,
+      "bestLap": 12116.66666666598,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 153,
+      "bestProgress": 4.885714285714286,
+      "topTenProgress": 4.861428571428572,
+      "averageProgress": 3.2385714285714244,
+      "fullLaps": 68,
+      "bestLap": 12124.999999999309,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 154,
+      "bestProgress": 4.885714285714286,
+      "topTenProgress": 4.869999999999999,
+      "averageProgress": 3.0854285714285674,
+      "fullLaps": 63,
+      "bestLap": 12124.999999999309,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 155,
+      "bestProgress": 4.885714285714286,
+      "topTenProgress": 4.8757142857142854,
+      "averageProgress": 3.174857142857137,
+      "fullLaps": 69,
+      "bestLap": 12124.999999999309,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 156,
+      "bestProgress": 4.885714285714286,
+      "topTenProgress": 4.867142857142857,
+      "averageProgress": 3.23428571428571,
+      "fullLaps": 68,
+      "bestLap": 12124.999999999309,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 157,
+      "bestProgress": 4.885714285714286,
+      "topTenProgress": 4.868571428571428,
+      "averageProgress": 2.750571428571425,
+      "fullLaps": 62,
+      "bestLap": 12124.999999999309,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 158,
+      "bestProgress": 4.885714285714286,
+      "topTenProgress": 4.868571428571428,
+      "averageProgress": 3.268285714285712,
+      "fullLaps": 71,
+      "bestLap": 12124.999999999309,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 159,
+      "bestProgress": 4.885714285714286,
+      "topTenProgress": 4.868571428571428,
+      "averageProgress": 3.229142857142853,
+      "fullLaps": 70,
+      "bestLap": 12124.999999999309,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 160,
+      "bestProgress": 4.885714285714286,
+      "topTenProgress": 4.874285714285714,
+      "averageProgress": 3.7189999999999954,
+      "fullLaps": 80,
+      "bestLap": 12124.999999999309,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 161,
+      "bestProgress": 4.9,
+      "topTenProgress": 4.880000000000001,
+      "averageProgress": 3.3454285714285668,
+      "fullLaps": 72,
+      "bestLap": 12124.999999999309,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 162,
+      "bestProgress": 4.9,
+      "topTenProgress": 4.874285714285714,
+      "averageProgress": 3.084285714285707,
+      "fullLaps": 65,
+      "bestLap": 12133.333333332645,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 163,
+      "bestProgress": 4.9,
+      "topTenProgress": 4.874285714285714,
+      "averageProgress": 3.16628571428571,
+      "fullLaps": 66,
+      "bestLap": 12133.333333332645,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 164,
+      "bestProgress": 4.9,
+      "topTenProgress": 4.875714285714285,
+      "averageProgress": 3.0391428571428527,
+      "fullLaps": 64,
+      "bestLap": 12133.333333332645,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 165,
+      "bestProgress": 4.9,
+      "topTenProgress": 4.880000000000001,
+      "averageProgress": 3.1279999999999935,
+      "fullLaps": 67,
+      "bestLap": 12099.999999999316,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 166,
+      "bestProgress": 4.9,
+      "topTenProgress": 4.88,
+      "averageProgress": 3.335571428571423,
+      "fullLaps": 71,
+      "bestLap": 12099.999999999316,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 167,
+      "bestProgress": 4.9,
+      "topTenProgress": 4.880000000000001,
+      "averageProgress": 2.987714285714281,
+      "fullLaps": 63,
+      "bestLap": 12099.999999999316,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 168,
+      "bestProgress": 4.9,
+      "topTenProgress": 4.869999999999999,
+      "averageProgress": 3.417142857142851,
+      "fullLaps": 77,
+      "bestLap": 12074.99999999932,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 169,
+      "bestProgress": 4.9,
+      "topTenProgress": 4.875714285714285,
+      "averageProgress": 3.1304285714285656,
+      "fullLaps": 68,
+      "bestLap": 12099.999999999316,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 170,
+      "bestProgress": 4.9,
+      "topTenProgress": 4.874285714285714,
+      "averageProgress": 3.2505714285714196,
+      "fullLaps": 70,
+      "bestLap": 12099.999999999316,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 171,
+      "bestProgress": 4.9,
+      "topTenProgress": 4.884285714285715,
+      "averageProgress": 3.709142857142855,
+      "fullLaps": 80,
+      "bestLap": 12099.999999999309,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 172,
+      "bestProgress": 4.9,
+      "topTenProgress": 4.881428571428573,
+      "averageProgress": 3.2662857142857096,
+      "fullLaps": 70,
+      "bestLap": 12099.999999999316,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 173,
+      "bestProgress": 4.9,
+      "topTenProgress": 4.88,
+      "averageProgress": 3.2099999999999933,
+      "fullLaps": 67,
+      "bestLap": 12066.66666666598,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 174,
+      "bestProgress": 4.9,
+      "topTenProgress": 4.884285714285715,
+      "averageProgress": 3.675571428571426,
+      "fullLaps": 77,
+      "bestLap": 12133.333333332645,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 175,
+      "bestProgress": 4.9,
+      "topTenProgress": 4.8671428571428565,
+      "averageProgress": 3.377999999999995,
+      "fullLaps": 72,
+      "bestLap": 12133.333333332645,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 176,
+      "bestProgress": 4.9,
+      "topTenProgress": 4.885714285714287,
+      "averageProgress": 3.6104285714285687,
+      "fullLaps": 76,
+      "bestLap": 12124.999999999312,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 177,
+      "bestProgress": 4.9,
+      "topTenProgress": 4.887142857142858,
+      "averageProgress": 3.206428571428564,
+      "fullLaps": 70,
+      "bestLap": 12133.333333332645,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 178,
+      "bestProgress": 4.914285714285715,
+      "topTenProgress": 4.892857142857142,
+      "averageProgress": 3.431428571428567,
+      "fullLaps": 71,
+      "bestLap": 12099.999999999309,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 179,
+      "bestProgress": 4.914285714285715,
+      "topTenProgress": 4.897142857142857,
+      "averageProgress": 3.682857142857139,
+      "fullLaps": 77,
+      "bestLap": 12099.999999999309,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 180,
+      "bestProgress": 4.914285714285715,
+      "topTenProgress": 4.894285714285714,
+      "averageProgress": 3.147999999999992,
+      "fullLaps": 68,
+      "bestLap": 12099.999999999309,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 181,
+      "bestProgress": 4.914285714285715,
+      "topTenProgress": 4.8914285714285715,
+      "averageProgress": 3.337714285714282,
+      "fullLaps": 70,
+      "bestLap": 12099.999999999309,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 182,
+      "bestProgress": 4.914285714285715,
+      "topTenProgress": 4.898571428571428,
+      "averageProgress": 3.4691428571428515,
+      "fullLaps": 74,
+      "bestLap": 12099.999999999309,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 183,
+      "bestProgress": 4.928571428571429,
+      "topTenProgress": 4.9,
+      "averageProgress": 3.9642857142857117,
+      "fullLaps": 83,
+      "bestLap": 12033.333333332652,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 184,
+      "bestProgress": 4.928571428571429,
+      "topTenProgress": 4.9,
+      "averageProgress": 3.3992857142857105,
+      "fullLaps": 71,
+      "bestLap": 12033.333333332652,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 185,
+      "bestProgress": 4.928571428571429,
+      "topTenProgress": 4.901428571428571,
+      "averageProgress": 3.2707142857142806,
+      "fullLaps": 67,
+      "bestLap": 12033.333333332652,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 186,
+      "bestProgress": 4.942857142857143,
+      "topTenProgress": 4.908571428571429,
+      "averageProgress": 3.439428571428566,
+      "fullLaps": 72,
+      "bestLap": 12033.333333332652,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 187,
+      "bestProgress": 4.942857142857143,
+      "topTenProgress": 4.905714285714287,
+      "averageProgress": 3.587428571428569,
+      "fullLaps": 77,
+      "bestLap": 12033.333333332652,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 188,
+      "bestProgress": 4.942857142857143,
+      "topTenProgress": 4.908571428571429,
+      "averageProgress": 3.2122857142857066,
+      "fullLaps": 68,
+      "bestLap": 12033.333333332652,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 189,
+      "bestProgress": 4.942857142857143,
+      "topTenProgress": 4.904285714285715,
+      "averageProgress": 3.119428571428566,
+      "fullLaps": 67,
+      "bestLap": 12033.333333332652,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 190,
+      "bestProgress": 4.942857142857143,
+      "topTenProgress": 4.904285714285715,
+      "averageProgress": 3.540142857142856,
+      "fullLaps": 77,
+      "bestLap": 12033.333333332652,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 191,
+      "bestProgress": 4.942857142857143,
+      "topTenProgress": 4.905714285714287,
+      "averageProgress": 3.3135714285714233,
+      "fullLaps": 71,
+      "bestLap": 12033.333333332652,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 192,
+      "bestProgress": 4.942857142857143,
+      "topTenProgress": 4.91,
+      "averageProgress": 3.257285714285712,
+      "fullLaps": 67,
+      "bestLap": 12033.333333332652,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 193,
+      "bestProgress": 4.942857142857143,
+      "topTenProgress": 4.9071428571428575,
+      "averageProgress": 2.868714285714282,
+      "fullLaps": 58,
+      "bestLap": 12033.333333332652,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 194,
+      "bestProgress": 4.942857142857143,
+      "topTenProgress": 4.8985714285714295,
+      "averageProgress": 3.2434285714285678,
+      "fullLaps": 70,
+      "bestLap": 12033.333333332652,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 195,
+      "bestProgress": 4.942857142857143,
+      "topTenProgress": 4.91,
+      "averageProgress": 3.1127142857142798,
+      "fullLaps": 65,
+      "bestLap": 12033.333333332652,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 196,
+      "bestProgress": 4.942857142857143,
+      "topTenProgress": 4.914285714285714,
+      "averageProgress": 3.230857142857138,
+      "fullLaps": 67,
+      "bestLap": 12033.333333332652,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 197,
+      "bestProgress": 4.942857142857143,
+      "topTenProgress": 4.911428571428571,
+      "averageProgress": 3.147285714285711,
+      "fullLaps": 64,
+      "bestLap": 12033.333333332652,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 198,
+      "bestProgress": 4.942857142857143,
+      "topTenProgress": 4.908571428571429,
+      "averageProgress": 2.933999999999993,
+      "fullLaps": 60,
+      "bestLap": 12033.333333332652,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 199,
+      "bestProgress": 4.942857142857143,
+      "topTenProgress": 4.911428571428571,
+      "averageProgress": 2.7825714285714223,
+      "fullLaps": 58,
+      "bestLap": 12033.333333332652,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 200,
+      "bestProgress": 4.942857142857143,
+      "topTenProgress": 4.912857142857144,
+      "averageProgress": 3.0234285714285662,
+      "fullLaps": 63,
+      "bestLap": 12033.333333332652,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 201,
+      "bestProgress": 4.942857142857143,
+      "topTenProgress": 4.914285714285715,
+      "averageProgress": 3.1252857142857082,
+      "fullLaps": 65,
+      "bestLap": 12033.33333333265,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 202,
+      "bestProgress": 4.942857142857143,
+      "topTenProgress": 4.9157142857142855,
+      "averageProgress": 3.659999999999996,
+      "fullLaps": 78,
+      "bestLap": 12033.33333333265,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 203,
+      "bestProgress": 4.942857142857143,
+      "topTenProgress": 4.918571428571428,
+      "averageProgress": 3.1809999999999934,
+      "fullLaps": 66,
+      "bestLap": 12033.33333333265,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 204,
+      "bestProgress": 4.942857142857143,
+      "topTenProgress": 4.9157142857142855,
+      "averageProgress": 3.6092857142857118,
+      "fullLaps": 76,
+      "bestLap": 12033.33333333265,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 205,
+      "bestProgress": 4.942857142857143,
+      "topTenProgress": 4.924285714285714,
+      "averageProgress": 3.6824285714285683,
+      "fullLaps": 76,
+      "bestLap": 12024.999999999316,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 206,
+      "bestProgress": 4.942857142857143,
+      "topTenProgress": 4.917142857142857,
+      "averageProgress": 2.9208571428571366,
+      "fullLaps": 60,
+      "bestLap": 12033.33333333265,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 207,
+      "bestProgress": 4.942857142857143,
+      "topTenProgress": 4.93,
+      "averageProgress": 2.7638571428571357,
+      "fullLaps": 56,
+      "bestLap": 12033.333333332645,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 208,
+      "bestProgress": 4.942857142857143,
+      "topTenProgress": 4.92,
+      "averageProgress": 3.2544285714285657,
+      "fullLaps": 67,
+      "bestLap": 12033.333333332645,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 209,
+      "bestProgress": 4.942857142857143,
+      "topTenProgress": 4.918571428571429,
+      "averageProgress": 2.6332857142857113,
+      "fullLaps": 55,
+      "bestLap": 12033.333333332645,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 210,
+      "bestProgress": 4.942857142857143,
+      "topTenProgress": 4.92,
+      "averageProgress": 2.9649999999999936,
+      "fullLaps": 64,
+      "bestLap": 12033.333333332645,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 211,
+      "bestProgress": 4.957142857142857,
+      "topTenProgress": 4.928571428571428,
+      "averageProgress": 3.2449999999999948,
+      "fullLaps": 69,
+      "bestLap": 11999.99999999932,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 212,
+      "bestProgress": 4.957142857142857,
+      "topTenProgress": 4.915714285714286,
+      "averageProgress": 2.848428571428564,
+      "fullLaps": 61,
+      "bestLap": 11999.99999999932,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 213,
+      "bestProgress": 4.957142857142857,
+      "topTenProgress": 4.928571428571428,
+      "averageProgress": 3.1088571428571368,
+      "fullLaps": 64,
+      "bestLap": 11999.99999999932,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 214,
+      "bestProgress": 4.957142857142857,
+      "topTenProgress": 4.92,
+      "averageProgress": 2.987571428571422,
+      "fullLaps": 61,
+      "bestLap": 11999.99999999932,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 215,
+      "bestProgress": 4.957142857142857,
+      "topTenProgress": 4.93,
+      "averageProgress": 2.858428571428565,
+      "fullLaps": 58,
+      "bestLap": 11999.99999999932,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 216,
+      "bestProgress": 4.957142857142857,
+      "topTenProgress": 4.927142857142856,
+      "averageProgress": 3.399714285714282,
+      "fullLaps": 70,
+      "bestLap": 11999.99999999932,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 217,
+      "bestProgress": 4.957142857142857,
+      "topTenProgress": 4.925714285714285,
+      "averageProgress": 3.116428571428562,
+      "fullLaps": 65,
+      "bestLap": 11999.99999999932,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 218,
+      "bestProgress": 4.957142857142857,
+      "topTenProgress": 4.928571428571429,
+      "averageProgress": 2.411714285714287,
+      "fullLaps": 50,
+      "bestLap": 11999.99999999932,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 219,
+      "bestProgress": 4.957142857142857,
+      "topTenProgress": 4.925714285714285,
+      "averageProgress": 3.409999999999996,
+      "fullLaps": 70,
+      "bestLap": 11999.99999999932,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 220,
+      "bestProgress": 4.957142857142857,
+      "topTenProgress": 4.929999999999999,
+      "averageProgress": 3.200571428571426,
+      "fullLaps": 66,
+      "bestLap": 11999.99999999932,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 221,
+      "bestProgress": 4.957142857142857,
+      "topTenProgress": 4.928571428571429,
+      "averageProgress": 2.8407142857142778,
+      "fullLaps": 57,
+      "bestLap": 11999.99999999932,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 222,
+      "bestProgress": 4.957142857142857,
+      "topTenProgress": 4.929999999999999,
+      "averageProgress": 2.9131428571428524,
+      "fullLaps": 63,
+      "bestLap": 11999.99999999932,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 223,
+      "bestProgress": 4.957142857142857,
+      "topTenProgress": 4.932857142857142,
+      "averageProgress": 3.011857142857135,
+      "fullLaps": 62,
+      "bestLap": 11999.99999999932,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 224,
+      "bestProgress": 4.957142857142857,
+      "topTenProgress": 4.922857142857143,
+      "averageProgress": 2.75114285714285,
+      "fullLaps": 57,
+      "bestLap": 11999.99999999932,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 225,
+      "bestProgress": 4.957142857142857,
+      "topTenProgress": 4.932857142857143,
+      "averageProgress": 2.8105714285714214,
+      "fullLaps": 59,
+      "bestLap": 11999.99999999932,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 226,
+      "bestProgress": 4.957142857142857,
+      "topTenProgress": 4.931428571428571,
+      "averageProgress": 2.5001428571428583,
+      "fullLaps": 52,
+      "bestLap": 11999.99999999932,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 227,
+      "bestProgress": 4.957142857142857,
+      "topTenProgress": 4.92,
+      "averageProgress": 3.1852857142857114,
+      "fullLaps": 65,
+      "bestLap": 11999.99999999932,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 228,
+      "bestProgress": 4.957142857142857,
+      "topTenProgress": 4.924285714285714,
+      "averageProgress": 2.8842857142857077,
+      "fullLaps": 63,
+      "bestLap": 11999.99999999932,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 229,
+      "bestProgress": 4.957142857142857,
+      "topTenProgress": 4.928571428571428,
+      "averageProgress": 2.893571428571421,
+      "fullLaps": 61,
+      "bestLap": 11999.99999999932,
+      "duration": 60.00833333333057
+    },
+    {
+      "generation": 230,
+      "bestProgress": 4.957142857142857,
+      "topTenProgress": 4.922857142857142,
+      "averageProgress": 2.858285714285707,
+      "fullLaps": 60,
+      "bestLap": 11999.99999999932,
+      "duration": 60.00833333333057
+    }
+  ],
+  "savedAt": "2026-11-11T16:38:53.148Z"
+}

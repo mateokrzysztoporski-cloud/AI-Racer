@@ -10,7 +10,7 @@ import { buildTrack, type Track, type TrackVariant } from "@/game/track/track";
 // Settings
 
 const STEP = 1 / 120; // same physics step as the game
-const BRAIN_FILE = "public/ai-racer-brain-gen-174.json";
+const BRAIN_FILE = "../../ai/results/ai-racer-brain-gen-174.json"; // the brain the README results are for
 const VARIANTS: TrackVariant[] = ["normal", "mirror", "reverse"];
 const RUNS = 5; // training is random, so every training test runs a few times
 const MAX_GENERATIONS = 100; // give up after this many
