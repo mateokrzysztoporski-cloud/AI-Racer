@@ -4,6 +4,9 @@
 
 **[▶ Watch it live](https://ai-racer-eight.vercel.app)**: the trained AI starts driving right away. Press N to watch it learn from zero.
 
+**What this shows:** reward design (changing what the AI is rewarded for got training unstuck), performance optimisation (crash checks made 94× faster),
+and controlled experiments (a test on tracks the AI has never seen, and a mutation rate experiment with repeatable random seeds).
+
 No machine learning libraries: the neural network, the genetic algorithm, the physics and the
 collision detection are written from scratch in TypeScript, so every number the AI learns can be explained.
 
@@ -79,7 +82,7 @@ There is no backpropagation and no labelled data. The AI learns like natural sel
 5. **The other 95** each get two parents from the best 20. Every weight comes from one parent (crossover),
    and about 10% of the weights get a small random change (mutation).
 
-Training runs up to **~10–13× faster than real time** in the browser (key `5`).
+Training runs up to **~10–13× faster than real time** in the browser (key `5`), and more than 20× headless (no graphics).
 
 ---
 
@@ -167,7 +170,7 @@ Four problems blocked the project. Each one was measured, fixed, and measured ag
 | # | Problem | Fix | Before | After |
 |:-:|---|---|:-:|:-:|
 | 1 | The AI got stuck at a hairpin | Reward surviving, not rushing | 3 of 6 runs learn a lap | **24 of 24** |
-| 2 | 100 cars were too slow to train | Spatial grid for the walls | 1.2× real time | **20×+ real time** |
+| 2 | 100 cars were too slow to train | Spatial grid for the walls | 1.2× real time | **20×+ real time** (headless, no graphics) |
 | 3 | The road folded into itself | Hairpins as circular arcs | Knots in the inner edge | **0 crossing walls** |
 | 4 | Physics depended on the screen | Fixed 1/120 s time step | Speed changes with Hz | **Same score after reload** |
 
