@@ -1,6 +1,7 @@
 // Evolution: scores the cars and breeds the next generation from the best brains.
 
 import type { Car } from "@/game/car/car";
+import { random } from "@/game/random";
 import { copyBrain, crossover, mutate, type Brain } from "./brain";
 
 export type Scored = { brain: Brain; score: number };
@@ -11,6 +12,13 @@ const ELITE_COUNT = 5; // the best brains go to the next generation unchanged
 const PARENT_POOL = 20; // parents are picked from the best 20
 const MUTATION_RATE = 0.1; // chance for each weight to change
 const MUTATION_AMOUNT = 0.5; // how big a change can be
+
+let mutationRate = MUTATION_RATE; // experiments can try another rate
+
+// for experiments: try another mutation rate
+export function setMutationRate(rate: number) {
+  mutationRate = rate;
+}
 
 // Score
 
@@ -34,7 +42,7 @@ export function nextGeneration(scored: Scored[], size: number): Brain[] {
   while (next.length < size) {
     const mother = pickRandom(parents).brain;
     const father = pickRandom(parents).brain;
-    next.push(mutate(crossover(mother, father), MUTATION_RATE, MUTATION_AMOUNT));
+    next.push(mutate(crossover(mother, father), mutationRate, MUTATION_AMOUNT));
   }
 
   return next;
@@ -43,13 +51,13 @@ export function nextGeneration(scored: Scored[], size: number): Brain[] {
 // Helpers
 
 function pickRandom<T>(list: T[]): T {
-  return list[Math.floor(Math.random() * list.length)];
+  return list[Math.floor(random() * list.length)];
 }
 
 // random order, so cars with the same score get the same chance
 function shuffle<T>(list: T[]): T[] {
   for (let i = list.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
+    const j = Math.floor(random() * (i + 1));
     [list[i], list[j]] = [list[j], list[i]];
   }
   return list;
