@@ -131,6 +131,35 @@ Watch it in the browser: [Reversed Track](https://ai-racer-eight.vercel.app/?tra
 
 ---
 
+## Experiment: is 10% the right mutation rate?
+
+When a new brain is bred, each of its 140 weights has a 10% chance to change a little.
+That 10% was picked without testing it, so here it is tested.
+
+**The guess, written down before running it:** 20% reaches the first full lap sooner than 5%,
+because more changes mean more different brains to try.
+
+**The test:** train from zero with 5%, 10% and 20%, 10 runs each. All three use the same 10 random seeds,
+so they start from the same brains and only the mutation rate is different.
+Measured: the generation of the first full lap (lower = learns faster).
+
+| Mutation rate | First full lap in generation (10 runs) | Average |
+|---|---|---|
+| 5% | 13, 18, 27, 30, 21, 17, 34, 47, 18, 23 | 24.8 |
+| **10%** (used in the game) | 44, 22, 15, 24, 21, 17, 18, 21, 27, 22 | 23.1 |
+| 20% | 28, 22, 24, 36, 15, 26, 18, 32, 18, 15 | 23.4 |
+
+**Result: no clear difference, the guess is not confirmed.** The three averages are within 2 generations of each other,
+while single runs with the same setting go from 13 to 47. So the small gaps between the averages can be luck.
+
+- Between 5% and 20% the mutation rate hardly changes how fast the AI learns its first lap. The starting brains matter more.
+- 10% was not a special choice, but there is no reason to change it.
+- The test only measures the first lap. A high rate could still hurt later, when a good brain needs small careful changes to get faster. That is the next thing to measure.
+
+Repeat it: `pnpm tsx experiments/mutation-rate.ts` (in `web/ai-racer`, about 4 minutes). The seeds are fixed, so a repeated run gives the same numbers.
+
+---
+
 ## Experiment log: what failed and how it was fixed
 
 Four problems blocked the project. Each one was measured, fixed, and measured again.
@@ -302,10 +331,12 @@ AI-Racer/
         │   ├── page.tsx            # home page, shows the game full window
         │   └── layout.tsx          # page title
         ├── experiments/
-        │   └── generalise.ts       # test without graphics: the trained brain on tracks it has never seen
+        │   ├── generalise.ts       # test without graphics: the trained brain on tracks it has never seen
+        │   └── mutation-rate.ts    # experiment without graphics: 5%, 10% or 20% mutation rate
         └── game/
             ├── Game.tsx            # game loop, keys, drawing
             ├── geometry.ts         # line crossing math (crashes, checkpoints, sensors)
+            ├── random.ts           # random numbers with a seed, so a training run can be repeated
             ├── ai/
             │   ├── brain.ts        # neural network: sensors in, gas and steer out
             │   ├── evolution.ts    # score + breeding the next generation
@@ -359,7 +390,7 @@ flowchart TB
 
 ## What's next
 
-- [ ] Headless experiment runner with fixed random seeds, to compare network sizes, population sizes and sensor counts over many runs
+- [ ] More experiments with the seeded runner: network size, population size and sensor count
 - [ ] Train on several tracks at once: the [test on new tracks](#does-it-only-know-this-one-track) shows the brain learns one track by heart
 - [ ] Show the network live: which neurons fire in which corner
 - [ ] A reinforcement learning baseline to compare with neuroevolution
