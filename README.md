@@ -108,6 +108,29 @@ because the physics is deterministic.
 
 ---
 
+## Does it only know this one track?
+
+The AI has only ever driven one track. So did it learn to drive, or did it learn this track by heart?
+To find out, the generation 174 brain was put on two tracks it has never seen: the same track
+**mirrored** (every left turn becomes a right turn) and the same road driven **the other way round**.
+
+| Track | Trained brain, no extra training | First full lap: trained brain + more training | First full lap: training from zero |
+|---|---|---|---|
+| normal | 4.90 laps in 60 s | generation 1, 1, 1, 1, 1 | generation 18, 18, 32, 26, 22 |
+| mirrored | **crashes after 0.44 laps** | generation 4, 2, 2, 2, 1 | generation 31, 22, 17, 28, 26 |
+| reversed | **crashes after 0.51 laps** | generation 1, 3, 1, 2, 3 | generation 34, 17, 30, 28, 28 |
+
+Training is random, so every training test ran 5 times.
+
+- **It overfits.** On a new track the trained brain crashes about halfway round. A lot of what it learned is this one track.
+- **But the skill carries over.** With more training it drives a full lap on a new track after about 2 generations. Brains that start from zero need about 26. So the trained brain is a far better starting point than a random one.
+- **Next step:** train on several tracks at once, so the brain can't learn one track by heart.
+
+The test runs the same game code without graphics, in about 3 minutes: `pnpm tsx experiments/generalise.ts` (in `web/ai-racer`).
+Watch it in the browser: [reversed track](https://ai-racer-eight.vercel.app/?track=reverse) · [mirrored track](https://ai-racer-eight.vercel.app/?track=mirror)
+
+---
+
 ## Experiment log: what failed and how it was fixed
 
 Four problems blocked the project. Each one was measured, fixed, and measured again.
@@ -278,6 +301,8 @@ AI-Racer/
         ├── app/
         │   ├── page.tsx            # home page, shows the game full window
         │   └── layout.tsx          # page title
+        ├── experiments/
+        │   └── generalise.ts       # test without graphics: the trained brain on tracks it has never seen
         └── game/
             ├── Game.tsx            # game loop, keys, drawing
             ├── geometry.ts         # line crossing math (crashes, checkpoints, sensors)
@@ -335,7 +360,7 @@ flowchart TB
 ## What's next
 
 - [ ] Headless experiment runner with fixed random seeds, to compare network sizes, population sizes and sensor counts over many runs
-- [ ] Generalisation test: does a brain trained on one track survive a new track?
+- [ ] Train on several tracks at once: the [test on new tracks](#does-it-only-know-this-one-track) shows the brain learns one track by heart
 - [ ] Show the network live: which neurons fire in which corner
 - [ ] A reinforcement learning baseline to compare with neuroevolution
 

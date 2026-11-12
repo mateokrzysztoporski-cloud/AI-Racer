@@ -11,6 +11,9 @@ export type Segment = { a: Point; b: Point };
 // where the car starts and which way it faces
 export type StartPosition = { position: Point; angle: number };
 
+// which track to build: the normal one, flipped left to right, or driven the other way round
+export type TrackVariant = "normal" | "mirror" | "reverse";
+
 export type Track = {
   center: Point[]; // middle of the road
   left: Point[]; // left edge
@@ -111,8 +114,12 @@ const CONTROL_POINTS: Point[] = [
 
 // Building the track
 
-export function buildTrack(): Track {
-  const center = smoothLoop(CONTROL_POINTS, SMOOTHING_ROUNDS);
+export function buildTrack(variant: TrackVariant = "normal"): Track {
+  // the test tracks are made from the same points, but the AI has never driven them
+  let points = CONTROL_POINTS;
+  if (variant === "mirror") points = points.map((point) => ({ x: WORLD_WIDTH - point.x, y: point.y }));
+  if (variant === "reverse") points = [...points].reverse();
+  const center = smoothLoop(points, SMOOTHING_ROUNDS);
   const left = offsetLoop(center, ROAD_WIDTH / 2);
   const right = offsetLoop(center, -ROAD_WIDTH / 2);
 
