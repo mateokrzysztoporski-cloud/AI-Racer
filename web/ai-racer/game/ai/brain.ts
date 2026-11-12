@@ -1,5 +1,7 @@
 // Brain: a small neural network. Sensor numbers go in, gas and steer come out.
 
+import { random } from "@/game/random";
+
 // Types
 
 export type Brain = {
@@ -11,7 +13,7 @@ export type Brain = {
 
 // new brain with random weights between -1 and 1
 export function createBrain(layers: number[]): Brain {
-  const weights = Array.from({ length: countWeights(layers) }, () => Math.random() * 2 - 1);
+  const weights = Array.from({ length: countWeights(layers) }, () => random() * 2 - 1);
   return { layers: [...layers], weights };
 }
 
@@ -53,7 +55,7 @@ export function copyBrain(brain: Brain): Brain {
 // child gets every weight from one of the two parents, 50/50
 export function crossover(mother: Brain, father: Brain): Brain {
   const weights = mother.weights.map((weight, i) =>
-    Math.random() < 0.5 ? weight : father.weights[i],
+    random() < 0.5 ? weight : father.weights[i],
   );
   return { layers: [...mother.layers], weights };
 }
@@ -62,7 +64,7 @@ export function crossover(mother: Brain, father: Brain): Brain {
 // rate = chance for each weight to change, amount = how big the change can be
 export function mutate(brain: Brain, rate: number, amount: number): Brain {
   const weights = brain.weights.map((weight) =>
-    Math.random() < rate ? weight + (Math.random() * 2 - 1) * amount : weight,
+    random() < rate ? weight + (random() * 2 - 1) * amount : weight,
   );
   return { layers: [...brain.layers], weights };
 }
