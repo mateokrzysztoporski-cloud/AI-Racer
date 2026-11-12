@@ -14,7 +14,7 @@ import { drawSensors } from "@/game/car/drawSensors";
 import { INPUT_NAMES, readSensors, sensorInputs } from "@/game/car/sensors";
 import { drawHint, drawInputs, drawLapTimer, drawTrainingInfo } from "@/game/race/drawHud";
 import { drawTrack } from "@/game/track/drawTrack";
-import { buildTrack, WORLD_HEIGHT, WORLD_WIDTH, type Track } from "@/game/track/track";
+import { buildTrack, WORLD_HEIGHT, WORLD_WIDTH, type Track, type TrackVariant } from "@/game/track/track";
 
 // physics step in seconds
 const STEP = 1 / 120;
@@ -39,7 +39,10 @@ export default function Game() {
     const ctx = canvas?.getContext("2d");
     if (!canvas || !ctx) return;
 
-    const track = buildTrack();
+    // ?track=mirror or ?track=reverse in the address: a test track the AI has never driven
+    const wanted = new URLSearchParams(window.location.search).get("track");
+    const variant: TrackVariant = wanted === "mirror" || wanted === "reverse" ? wanted : "normal";
+    const track = buildTrack(variant);
 
     // sharp lines on every screen: the canvas gets as many pixels as it is shown with.
     // The track is drawn once on a hidden canvas of that size, then pasted every frame.
@@ -58,7 +61,7 @@ export default function Game() {
     const trainer = createTrainer(track);
 
     // continue where the last training stopped, if it was saved in this browser
-    const saved = loadFromBrowser(LAYERS);
+    const saved = variant === "normal" ? loadFromBrowser(LAYERS) : null; // test tracks leave your save alone
     if (saved) restoreTrainer(trainer, saved, track);
     let savedGenerations = trainer.history.length; // generations already saved in the browser
 
@@ -129,7 +132,7 @@ export default function Game() {
       if (key === "KeyT") startDemo();
       if (key === "KeyN") {
         Object.assign(trainer, createTrainer(track));
-        forgetBrowserSave();
+        if (variant === "normal") forgetBrowserSave();
         savedGenerations = 0;
         logged = 0;
         notify("new training started");
@@ -176,7 +179,7 @@ export default function Game() {
         logged += 1;
       }
       // after every generation: save the training in this browser
-      if (trainer.history.length > savedGenerations) {
+      if (variant === "normal" && trainer.history.length > savedGenerations) {
         savedGenerations = trainer.history.length;
         const toSave = trainingToSave(trainer);
         if (toSave) saveToBrowser(toSave);
@@ -232,6 +235,8 @@ export default function Game() {
       } else {
         drawHint(ctx, "M = AI training");
       }
+      // on a test track: say so, under the lap timer
+      if (variant !== "normal") drawHint(ctx, `test track: ${variant}`, 160);
       // short message, e.g. after saving or loading
       if (performance.now() < noticeUntil) drawHint(ctx, notice, mode === "train" ? 426 : 240);
       frameId = requestAnimationFrame(frame);
