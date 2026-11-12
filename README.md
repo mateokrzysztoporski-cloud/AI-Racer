@@ -399,4 +399,8 @@ flowchart TB
 
 TypeScript · Next.js 16 · React 19 · HTML Canvas · no ML or physics libraries
 
-Built by [Mateusz Krzysztoporski](https://github.com/mkrzysztoporski)
+Built by [Mateusz Krzysztoporski](https://github.com/mkrzysztoporski): the game, the physics, the neural network, the evolution and the experiments.
+[Jan](https://github.com/dj-skn) set up the Next.js starter app and helped with code clean-up and two canvas fixes.
+
+I used an AI assistant as a pair programmer, and I typed, tested and can explain every line myself.
+
