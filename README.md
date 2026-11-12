@@ -127,7 +127,7 @@ Training is random, so every training test ran 5 times.
 - **Next step:** train on several tracks at once, so the brain can't learn one track by heart.
 
 The test runs the same game code without graphics, in about 3 minutes: `pnpm tsx experiments/generalise.ts` (in `web/ai-racer`).
-Watch it in the browser: [reversed track](https://ai-racer-eight.vercel.app/?track=reverse) · [mirrored track](https://ai-racer-eight.vercel.app/?track=mirror)
+Watch it in the browser: [Reversed Track](https://ai-racer-eight.vercel.app/?track=reverse) · [Mirrored Track](https://ai-racer-eight.vercel.app/?track=mirror)
 
 ---
 
